@@ -19,7 +19,7 @@ const { frontmatter } = Astro.props;
   <title>{frontmatter.title || 'Blog'}</title>
 </head>
 <body>
-  <main>
+  <main class="text-stone-900 dark:text-stone-300 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <slot />
   </main>
 </body>
