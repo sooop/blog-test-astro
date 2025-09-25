@@ -1,0 +1,20 @@
+@import 'katex/dist/katex.min.css';
+
+/* Base styles */
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Math styles */
+.katex-display {
+  margin: 1em 0;
+}
+
+/* Hide HTML fallback when MathML is supported */
+.katex .katex-html {
+  display: none;
+}
