@@ -1,0 +1,29 @@
+---
+import { getCollection } from 'astro:content';
+import MarkdownLayout from '../../../layouts/MarkdownLayout.astro';
+
+export async function getStaticPaths() {
+  const projectEulerPosts = await getCollection('project-euler');
+  console.log('Collection posts:', projectEulerPosts.map(p => ({ id: p.id, slug: p.slug })));
+  const paths = projectEulerPosts.map((post) => ({
+    params: { number: post.id.replace('.md', '') },
+    props: { post },
+  }));
+  console.log('Generated paths:', paths);
+  return paths;
+}
+
+const { number } = Astro.params;
+const projectEulerPosts = await getCollection('project-euler');
+const post = projectEulerPosts.find(p => p.id.replace('.md', '') === number);
+
+if (!post) {
+  return Astro.redirect('/404');
+}
+
+const { Content } = await post.render();
+---
+
+<MarkdownLayout frontmatter={post.data}>
+  <Content />
+</MarkdownLayout>

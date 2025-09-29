@@ -19,8 +19,15 @@ const { frontmatter } = Astro.props;
   <title>{frontmatter.title || 'Blog'}</title>
 </head>
 <body>
-  <main class="text-stone-900 dark:text-stone-300 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <slot />
-  </main>
+  <div class="flex flex-col gap-8 w-4xl mx-auto">
+    <div>
+      <h1 class="text-4xl text-center align-center">{frontmatter.title}</h1>
+    </div>
+    <main class="text-stone-900 dark:text-stone-300 w-full mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <slot />
+    </main>
+    <div class="flex items-center justify-center text-xs text-stone-400">powered by soooprmx.
+    </div>
+  </div>
 </body>
 </html>
