@@ -5,12 +5,13 @@ const projectEuler = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
+    published_date: z.coerce.date(),
+    modified_date: z.coerce.date(),
     slug: z.string().optional(),
-    published_date: z.string(),
-    modified_date: z.string(),
-    tags: z.array(z.string()),
-    type: z.string(),
-    category: z.string(),
+    custom_excerpt: z.string().optional(),
+    feature_image: z.string().optional(),
+    category: z.string().optional(),
+    tags: z.array(z.string()).optional(),
     layout: z.string().default('../../../layouts/MarkdownLayout.astro')
   })
 });
