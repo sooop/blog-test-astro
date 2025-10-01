@@ -1,6 +1,4 @@
 @import 'tailwindcss';
-@import 'katex/dist/katex.min.css'; 
-
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -17,8 +15,8 @@
   --secondary-foreground: hsl(0 0% 13%);
   --muted: hsl(0 0% 88%);
   --muted-foreground: hsl(0 0% 45%);
-  --accent: hsl(0 0% 13%);
-  --accent-foreground: hsl(0 0% 98%);
+  --accent: oklch(70.0% 0.254 64deg);
+  --accent-foreground: hsl(0 0% 13%);
   --destructive: hsl(0 84.2% 60.2%);
   --destructive-foreground: hsl(0 0% 98%);
   --border: hsl(0 0% 90%);
@@ -89,7 +87,7 @@
 /* Article Content Styles */
 .prose {
   @apply text-foreground;
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
 }
 
 .prose p {
@@ -100,23 +98,23 @@
 }
 
 .prose h2 {
-  @apply font-serif text-3xl font-semibold mt-16 mb-6 text-foreground;
+  @apply font-serif text-3xl font-semibold mt-12 mb-6 text-foreground;
 }
 
 .prose h3 {
-  @apply font-serif text-2xl font-semibold mt-12 mb-5 text-foreground;
+  @apply font-serif text-2xl font-semibold mt-10 mb-5 text-foreground;
 }
 
 .prose h4 {
-  @apply font-serif text-xl font-semibold mt-10 mb-4 text-foreground;
+  @apply font-serif text-xl font-semibold mt-8 mb-4 text-foreground;
 }
 
 .prose h5, .prose h6 {
-  @apply font-sans text-lg font-semibold mt-8 mb-3 text-foreground;
+  @apply font-sans text-lg font-semibold mt-6 mb-3 text-foreground;
 }
 
 .prose ul, .prose ol {
-  @apply mb-6 space-y-2;
+  @apply mb-8 space-y-3;
 }
 
 .prose ul {
@@ -138,9 +136,13 @@
 }
 
 .prose code {
-  @apply font-mono px-2 py-0.5 rounded bg-muted text-foreground;
-  font-size: 0.9em;
+  @apply font-mono text-foreground;
+  font-size: 0.875em;
   font-weight: 500;
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  background-color: hsl(0 0% 95%);
+  border: 1px solid hsl(0 0% 88%);
 }
 
 .prose pre {
@@ -153,6 +155,8 @@
 .prose pre code {
   @apply bg-transparent p-0;
   font-size: 0.9375rem;
+  border: none;
+  background: none;
 }
 
 .prose blockquote {
@@ -162,8 +166,12 @@
 }
 
 .prose a {
-  @apply text-foreground underline decoration-border hover:decoration-foreground transition-colors;
+  @apply text-foreground underline decoration-accent/40 hover:decoration-accent transition-colors;
   text-underline-offset: 3px;
+}
+
+.prose a:hover {
+  color: var(--accent);
 }
 
 .prose strong {
@@ -193,5 +201,3 @@
 .prose td {
   @apply border-b border-border px-4 py-3 text-foreground;
 }
-
-

@@ -1,0 +1,69 @@
+import { readFile, writeFile } from 'fs/promises';
+import { glob } from 'glob';
+import path from 'path';
+
+export function autoLayoutIntegration() {
+  return {
+    name: 'auto-layout',
+    hooks: {
+      'astro:config:setup': async ({ updateConfig, config }) => {
+        // pages/series 하위의 모든 마크다운 파일 찾기
+        const seriesFiles = await glob('src/pages/series/**/*.md');
+
+        for (const file of seriesFiles) {
+          try {
+            const content = await readFile(file, 'utf-8');
+
+            // frontmatter가 없거나 layout이 없는 경우
+            if (!content.startsWith('---') || (!content.includes('layout:') && !content.includes('layout :'))) {
+              let newContent;
+
+              if (content.startsWith('---')) {
+                // 기존 frontmatter에 layout 추가
+                const frontmatterEnd = content.indexOf('---', 3);
+                const frontmatter = content.slice(3, frontmatterEnd);
+                const body = content.slice(frontmatterEnd + 3);
+
+                newContent = `---
+${frontmatter}layout: ../../../layouts/MarkdownLayout.astro
+---${body}`;
+              } else {
+                // 새 frontmatter 생성
+                const title = extractTitle(file, content);
+                newContent = `---
+layout: ../../../layouts/MarkdownLayout.astro
+title: "${title}"
+---
+
+${content}`;
+              }
+
+              await writeFile(file, newContent);
+              console.log(`Auto-layout added to: ${file}`);
+            }
+          } catch (error) {
+            console.error(`Error processing ${file}:`, error);
+          }
+        }
+      }
+    }
+  };
+}
+
+function extractTitle(filePath, content) {
+  // 파일명에서 제목 추출
+  const filename = path.basename(filePath, '.md');
+
+  // 첫 번째 헤딩에서 제목 추출 시도
+  const headingMatch = content.match(/^#\s+(.+)$/m);
+  if (headingMatch) {
+    return headingMatch[1];
+  }
+
+  // 파일명을 기반으로 제목 생성
+  if (filename.startsWith('00')) {
+    return `Project Euler ${filename}`;
+  }
+
+  return filename;
+}

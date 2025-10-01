@@ -1,16 +1,152 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Site</title>
-	</head>
-	<body>
-		<h1>Astro Site</h1>
-	</body>
-</html>
+<BaseLayout title="Wireframe" currentPath="/">
+	<section class="max-w-5xl mx-auto px-6 py-16 md:py-24 lg:py-32">
+					<div class="max-w-3xl">
+						<p
+							class="text-sm text-muted-foreground mb-6 tracking-wide uppercase"
+						>
+							How did you find me?
+						</p>
+						<h1
+							class="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight text-balance mb-8 text-foreground"
+						>
+							Thoughts on all useful and useless things
+						</h1>
+						<p
+							class="text-lg md:text-xl text-muted-foreground leading-relaxed text-pretty max-w-2xl"
+						>
+							A personal archive of curiosity-driven explorations.
+						</p>
+					</div>
+				</section>
+
+				<!-- Featured Series -->
+				<section class="max-w-5xl mx-auto px-6 pb-24">
+					<h2
+						class="text-xs text-muted-foreground mb-12 tracking-widest uppercase"
+					>
+						Featured Series
+					</h2>
+
+					<div class="space-y-12">
+						<!-- Project Euler Series -->
+						<article class="border-t border-border pt-8">
+							<div
+								class="flex items-start justify-between gap-4"
+							>
+								<div class="flex-1">
+									<div
+										class="flex items-center gap-3 mb-4"
+									>
+										<span
+											class="text-xs text-muted-foreground tracking-wider uppercase"
+										>
+											Mathematics
+										</span>
+										<span class="text-muted-foreground"
+											>2024</span
+										>
+									</div>
+									<h3
+										class="font-serif text-2xl md:text-3xl mb-3 text-foreground"
+									>
+										Project Euler
+									</h3>
+									<p
+										class="text-muted-foreground leading-relaxed mb-4"
+									>
+										수학과 프로그래밍이 만나는 지점. 아름다운
+										문제들을 풀어가는 여정.
+									</p>
+								</div>
+								<a
+									href="/series/project-euler/001"
+									class="text-sm text-accent hover:opacity-70 transition-opacity whitespace-nowrap font-medium"
+								>
+									Read →
+								</a>
+							</div>
+						</article>
+
+						<!-- Placeholder for future series -->
+						<article class="border-t border-border pt-8">
+							<div
+								class="flex items-start justify-between gap-4"
+							>
+								<div class="flex-1">
+									<div
+										class="flex items-center gap-3 mb-4"
+									>
+										<span
+											class="text-xs text-muted-foreground tracking-wider uppercase"
+										>
+											Science
+										</span>
+										<span class="text-muted-foreground"
+											>2024</span
+										>
+									</div>
+									<h3
+										class="font-serif text-2xl md:text-3xl mb-3 text-foreground"
+									>
+										Cosmic Perspectives
+									</h3>
+									<p
+										class="text-muted-foreground leading-relaxed mb-4"
+									>
+										천문학과 물리학에 대한 호기심 어린 탐구.
+										우주를 이해하려는 시도들.
+									</p>
+								</div>
+								<a
+									href="#"
+									class="text-sm text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap"
+								>
+									Coming soon
+								</a>
+							</div>
+						</article>
+
+						<article class="border-t border-border pt-8">
+							<div
+								class="flex items-start justify-between gap-4"
+							>
+								<div class="flex-1">
+									<div
+										class="flex items-center gap-3 mb-4"
+									>
+										<span
+											class="text-xs text-muted-foreground tracking-wider uppercase"
+										>
+											Tech
+										</span>
+										<span class="text-muted-foreground"
+											>2024</span
+										>
+									</div>
+									<h3
+										class="font-serif text-2xl md:text-3xl mb-3 text-foreground"
+									>
+										Things I Fixed
+									</h3>
+									<p
+										class="text-muted-foreground leading-relaxed mb-4"
+									>
+										고장 난 것들을 고치며 배운 것들. 하드웨어부터
+										소프트웨어까지.
+									</p>
+								</div>
+								<a
+									href="#"
+									class="text-sm text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap"
+								>
+									Coming soon
+								</a>
+							</div>
+						</article>
+					</div>
+	</section>
+</BaseLayout>

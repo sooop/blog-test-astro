@@ -1,7 +1,73 @@
 ---
+interface Props {
+  currentPath?: string;
+}
 
-const { frontmatter } = Astro.props;
+const { currentPath = '' } = Astro.props;
 ---
-<div>
-      <h1 class="text-4xl text-center align-center">{frontmatter.title}</h1>
-</div>
+
+<header class="border-b border-border bg-background">
+  <div class="max-w-5xl mx-auto px-6 py-6 md:py-8">
+    <nav class="flex items-center justify-between">
+      <a
+        href="/"
+        class="text-xl md:text-2xl font-serif tracking-tight text-foreground hover:text-accent transition-colors"
+      >
+        Wireframe
+      </a>
+
+      <div class="hidden md:flex items-center gap-8">
+        <a
+          href="/series/project-euler"
+          class:list={[
+            "text-sm transition-colors",
+            currentPath.includes('/series/project-euler')
+              ? "text-accent font-medium"
+              : "text-muted-foreground hover:text-accent"
+          ]}
+        >
+          Project Euler
+        </a>
+        <a
+          href="/writing"
+          class:list={[
+            "text-sm transition-colors",
+            currentPath.includes('/writing')
+              ? "text-accent font-medium"
+              : "text-muted-foreground hover:text-accent"
+          ]}
+        >
+          Blog
+        </a>
+        <a
+          href="/about"
+          class:list={[
+            "text-sm transition-colors",
+            currentPath.includes('/about')
+              ? "text-accent font-medium"
+              : "text-muted-foreground hover:text-accent"
+          ]}
+        >
+          About
+        </a>
+        <a
+          href="/contact"
+          class:list={[
+            "text-sm transition-colors",
+            currentPath.includes('/contact')
+              ? "text-accent font-medium"
+              : "text-muted-foreground hover:text-accent"
+          ]}
+        >
+          Contact
+        </a>
+      </div>
+
+      <button
+        class="md:hidden p-2 -mr-2 text-foreground"
+        aria-label="Toggle menu"
+      >
+      </button>
+    </nav>
+  </div>
+</header>

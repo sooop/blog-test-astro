@@ -1,31 +1,71 @@
 ---
-import '../styles/global.css';
-import Header from '../components/Header.astro'
+import BaseLayout from './BaseLayout.astro';
+
 export interface Props {
   frontmatter: {
     title?: string;
+    published_date?: string;
+    modified_date?: string;
+    custom_excerpt?: string;
+    category?: string;
+    tags?: string[];
   };
 }
 
 const { frontmatter } = Astro.props;
+
+// Format date
+const formatDate = (dateString?: string) => {
+  if (!dateString) return null;
+  const date = new Date(dateString);
+  return date.toLocaleDateString('ko-KR', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+};
 ---
 
-<html lang="ko">
-<head>
-  <meta charset="utf-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width" />
-  <meta name="generator" content={Astro.generator} />
-  <title>{frontmatter.title || 'Blog'}</title>
-</head>
-<body>
-  <div class="flex flex-col gap-8 w-4xl mx-auto">
-    <Header frontmatter={frontmatter} />
-    <main class="text-stone-900 dark:text-stone-300 w-full mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <slot />
-    </main>
-    <div class="flex items-center justify-center text-xs text-stone-400">powered by soooprmx.
+<BaseLayout title={frontmatter.title || 'Wireframe'} currentPath={Astro.url.pathname}>
+  <article class="max-w-5xl mx-auto px-6 py-12 md:py-16">
+    <div class="max-w-3xl mx-auto">
+      <!-- Meta Info -->
+      <div class="flex items-center gap-4 mb-8">
+        {frontmatter.category && (
+          <span class="text-xs text-muted-foreground tracking-wider uppercase">
+            {frontmatter.category}
+          </span>
+        )}
+        {frontmatter.tags && frontmatter.tags.length > 0 && (
+          <span class="text-xs text-muted-foreground tracking-wider uppercase">
+            {frontmatter.tags[0]}
+          </span>
+        )}
+        {frontmatter.published_date && (
+          <span class="text-xs text-muted-foreground">
+            {formatDate(frontmatter.published_date)}
+          </span>
+        )}
+      </div>
+
+      <!-- Title -->
+      <h1
+        class="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight mb-8 text-foreground"
+      >
+        {frontmatter.title}
+      </h1>
+
+      <!-- Excerpt -->
+      {frontmatter.custom_excerpt && (
+        <p class="text-lg md:text-xl text-muted-foreground leading-relaxed mb-12 pb-12 border-b border-border">
+          {frontmatter.custom_excerpt}
+        </p>
+      )}
+
+      <!-- Content -->
+      <div class="prose max-w-none">
+        <slot />
+      </div>
     </div>
-  </div>
-</body>
-</html>
+  </article>
+</BaseLayout>
