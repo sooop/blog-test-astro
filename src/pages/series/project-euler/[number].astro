@@ -1,29 +1,65 @@
 ---
 import { getCollection } from 'astro:content';
-import MarkdownLayout from '../../../layouts/MarkdownLayout.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PostNavigation from '../../../components/PostNavigation.astro';
 
 export async function getStaticPaths() {
   const projectEulerPosts = await getCollection('project-euler');
-  console.log('Collection posts:', projectEulerPosts.map(p => ({ id: p.id, slug: p.slug })));
-  const paths = projectEulerPosts.map((post) => ({
+
+  // Sort by number ascending
+  const sortedPosts = projectEulerPosts.sort((a, b) => {
+    const numA = parseInt(a.id.replace('.md', ''));
+    const numB = parseInt(b.id.replace('.md', ''));
+    return numA - numB;
+  });
+
+  return sortedPosts.map((post, index) => ({
     params: { number: post.id.replace('.md', '') },
-    props: { post },
+    props: {
+      post,
+      prevPost: index > 0 ? sortedPosts[index - 1] : null,
+      nextPost: index < sortedPosts.length - 1 ? sortedPosts[index + 1] : null,
+    },
   }));
-  console.log('Generated paths:', paths);
-  return paths;
 }
 
-const { number } = Astro.params;
-const projectEulerPosts = await getCollection('project-euler');
-const post = projectEulerPosts.find(p => p.id.replace('.md', '') === number);
-
-if (!post) {
-  return Astro.redirect('/404');
-}
-
+const { post, prevPost, nextPost } = Astro.props;
 const { Content } = await post.render();
+
+const formatDate = (dateString?: string) => {
+  if (!dateString) return null;
+  const date = new Date(dateString);
+  return date.toLocaleDateString('ko-KR', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+};
 ---
 
-<MarkdownLayout frontmatter={post.data}>
-  <Content />
-</MarkdownLayout>
+<BaseLayout title={post.data.title} currentPath={Astro.url.pathname}>
+  <article class="max-w-3xl mx-auto px-6 py-12 md:py-16">
+    <header class="mb-12">
+      <h1 class="font-serif text-4xl md:text-5xl mb-4 text-foreground">
+        {post.data.title}
+      </h1>
+      <div class="flex gap-4 text-sm text-muted-foreground">
+        {post.data.published_date && (
+          <time datetime={post.data.published_date}>
+            {formatDate(post.data.published_date)}
+          </time>
+        )}
+      </div>
+    </header>
+
+    <div class="prose prose-lg max-w-none">
+      <Content />
+    </div>
+
+    <PostNavigation
+      prevPost={prevPost ? { url: `/series/project-euler/${prevPost.id.replace('.md', '')}`, title: prevPost.data.title } : null}
+      nextPost={nextPost ? { url: `/series/project-euler/${nextPost.id.replace('.md', '')}`, title: nextPost.data.title } : null}
+      listUrl="/series/project-euler"
+    />
+  </article>
+</BaseLayout>

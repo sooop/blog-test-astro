@@ -29,10 +29,10 @@ const { currentPath = '' } = Astro.props;
           Project Euler
         </a>
         <a
-          href="/writing"
+          href="/blog"
           class:list={[
             "text-sm transition-colors",
-            currentPath.includes('/writing')
+            currentPath.includes('/blog')
               ? "text-accent font-medium"
               : "text-muted-foreground hover:text-accent"
           ]}

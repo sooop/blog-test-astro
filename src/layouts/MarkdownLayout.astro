@@ -27,45 +27,46 @@ const formatDate = (dateString?: string) => {
 ---
 
 <BaseLayout title={frontmatter.title || 'Wireframe'} currentPath={Astro.url.pathname}>
-  <article class="max-w-5xl mx-auto px-6 py-12 md:py-16">
-    <div class="max-w-3xl mx-auto">
-      <!-- Meta Info -->
-      <div class="flex items-center gap-4 mb-8">
-        {frontmatter.category && (
-          <span class="text-xs text-muted-foreground tracking-wider uppercase">
-            {frontmatter.category}
-          </span>
-        )}
-        {frontmatter.tags && frontmatter.tags.length > 0 && (
-          <span class="text-xs text-muted-foreground tracking-wider uppercase">
-            {frontmatter.tags[0]}
-          </span>
-        )}
-        {frontmatter.published_date && (
-          <span class="text-xs text-muted-foreground">
-            {formatDate(frontmatter.published_date)}
-          </span>
-        )}
-      </div>
-
-      <!-- Title -->
-      <h1
-        class="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight mb-8 text-foreground"
-      >
-        {frontmatter.title}
-      </h1>
-
-      <!-- Excerpt -->
-      {frontmatter.custom_excerpt && (
-        <p class="text-lg md:text-xl text-muted-foreground leading-relaxed mb-12 pb-12 border-b border-border">
-          {frontmatter.custom_excerpt}
-        </p>
+  <article class="max-w-3xl mx-auto px-6 py-12 md:py-16">
+    <!-- Meta Info -->
+    <div class="flex items-center gap-4 mb-8">
+      {frontmatter.category && (
+        <span class="text-xs text-muted-foreground tracking-wider uppercase">
+          {frontmatter.category}
+        </span>
       )}
-
-      <!-- Content -->
-      <div class="prose max-w-none">
-        <slot />
-      </div>
+      {frontmatter.tags && frontmatter.tags.length > 0 && (
+        <span class="text-xs text-muted-foreground tracking-wider uppercase">
+          {frontmatter.tags[0]}
+        </span>
+      )}
+      {frontmatter.published_date && (
+        <span class="text-xs text-muted-foreground">
+          {formatDate(frontmatter.published_date)}
+        </span>
+      )}
     </div>
+
+    <!-- Title -->
+    <h1
+      class="font-serif text-4xl md:text-5xl lg:text-6xl leading-tight mb-8 text-foreground"
+    >
+      {frontmatter.title}
+    </h1>
+
+    <!-- Excerpt -->
+    {frontmatter.custom_excerpt && (
+      <p class="text-lg md:text-xl text-muted-foreground leading-relaxed mb-12 pb-12 border-b border-border">
+        {frontmatter.custom_excerpt}
+      </p>
+    )}
+
+    <!-- Content -->
+    <div class="prose prose-lg max-w-none">
+      <slot />
+    </div>
+
+    <!-- Navigation (outside prose context) -->
+    <slot name="navigation" />
   </article>
 </BaseLayout>

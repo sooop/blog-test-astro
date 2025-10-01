@@ -1,0 +1,57 @@
+---
+interface Props {
+  prevPost?: {
+    url: string;
+    title: string;
+  } | null;
+  nextPost?: {
+    url: string;
+    title: string;
+  } | null;
+  listUrl: string;
+  listLabel?: string;
+}
+
+const { prevPost, nextPost, listUrl, listLabel = '목록' } = Astro.props;
+---
+
+<nav class="mt-16 pt-8 border-t border-border">
+  <div class="grid grid-cols-3 gap-4 items-start">
+    <div class="col-span-1">
+      {prevPost && (
+        <a
+          href={prevPost.url}
+          class="group block"
+        >
+          <span class="text-xs text-muted-foreground uppercase tracking-wider">이전 글</span>
+          <h3 class="font-serif text-base mt-1 group-hover:text-accent transition-colors line-clamp-2">
+            {prevPost.title}
+          </h3>
+        </a>
+      )}
+    </div>
+
+    <div class="col-span-1 flex justify-center">
+      <a
+        href={listUrl}
+        class="text-sm text-muted-foreground hover:text-foreground transition-colors px-4 py-2 border border-border rounded hover:border-foreground whitespace-nowrap"
+      >
+        {listLabel}
+      </a>
+    </div>
+
+    <div class="col-span-1 text-right">
+      {nextPost && (
+        <a
+          href={nextPost.url}
+          class="group block"
+        >
+          <span class="text-xs text-muted-foreground uppercase tracking-wider">다음 글</span>
+          <h3 class="font-serif text-base mt-1 group-hover:text-accent transition-colors line-clamp-2">
+            {nextPost.title}
+          </h3>
+        </a>
+      )}
+    </div>
+  </div>
+</nav>

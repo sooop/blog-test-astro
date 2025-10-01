@@ -64,7 +64,12 @@ const sortedPosts = projectEulerPosts.sort((a, b) => {
 													)}
 												</div>
 												<h3 class="font-serif text-xl md:text-2xl mb-2 text-foreground">
-													{post.data.title}
+													<a
+														href={`/series/project-euler/${number}`}
+														class="hover:text-accent transition-colors"
+													>
+														{post.data.title}
+													</a>
 												</h3>
 												{post.data.custom_excerpt && (
 													<p class="text-muted-foreground leading-relaxed text-sm">
@@ -72,12 +77,6 @@ const sortedPosts = projectEulerPosts.sort((a, b) => {
 													</p>
 												)}
 											</div>
-											<a
-												href={`/series/project-euler/${number}`}
-												class="text-sm text-accent hover:opacity-70 transition-opacity whitespace-nowrap font-medium"
-											>
-												Read →
-											</a>
 										</div>
 									</article>
 								);

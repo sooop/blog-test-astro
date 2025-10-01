@@ -12,7 +12,15 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   markdown: {
       remarkPlugins: [remarkMath],
-      rehypePlugins: [rehypeKatex, katexDisplayFix],
+      rehypePlugins: [
+        [rehypeKatex, {
+          output: 'mathml',
+          strict: false,
+          trust: false,
+          throwOnError: false
+        }],
+        katexDisplayFix
+      ],
       shikiConfig: { theme: 'vitesse-light',
         wrap: true,
        }

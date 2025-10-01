@@ -1,0 +1,57 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const blogPosts = await getCollection('blog');
+
+// Sort by published_at in descending order (newest first)
+const sortedPosts = blogPosts.sort((a, b) => {
+  const dateA = new Date(a.data.published_at).getTime();
+  const dateB = new Date(b.data.published_at).getTime();
+  return dateB - dateA;
+});
+---
+
+<BaseLayout title="Blog" currentPath="/blog">
+  <div class="max-w-5xl mx-auto px-6 py-16 md:py-24">
+    <header class="mb-16">
+      <h1 class="font-serif text-4xl md:text-5xl mb-4 text-foreground">
+        Blog
+      </h1>
+      <p class="text-lg text-muted-foreground">
+        A collection of thoughts and writings
+      </p>
+    </header>
+
+    <div class="space-y-8">
+      {sortedPosts.map(post => (
+        <article class="border-t border-border pt-8">
+          <div class="flex items-start justify-between gap-4">
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-3">
+                <time
+                  datetime={post.data.published_at}
+                  class="text-sm text-muted-foreground"
+                >
+                  {new Date(post.data.published_at).toLocaleDateString('ko-KR', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                  })}
+                </time>
+              </div>
+              <h2 class="font-serif text-2xl md:text-3xl mb-2 text-foreground">
+                <a
+                  href={`/blog/${post.data.slug}`}
+                  class="hover:text-accent transition-colors"
+                >
+                  {post.data.title}
+                </a>
+              </h2>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

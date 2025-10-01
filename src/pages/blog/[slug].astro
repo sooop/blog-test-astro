@@ -1,0 +1,57 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostNavigation from '../../components/PostNavigation.astro';
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection('blog');
+
+  // Sort by published_at descending (newest first)
+  const sortedEntries = blogEntries.sort((a, b) => {
+    const dateA = new Date(a.data.published_at).getTime();
+    const dateB = new Date(b.data.published_at).getTime();
+    return dateB - dateA;
+  });
+
+  return sortedEntries.map((entry, index) => ({
+    params: { slug: entry.data.slug },
+    props: {
+      entry,
+      prevPost: index < sortedEntries.length - 1 ? sortedEntries[index + 1] : null,
+      nextPost: index > 0 ? sortedEntries[index - 1] : null,
+    },
+  }));
+}
+
+const { entry, prevPost, nextPost } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<BaseLayout title={entry.data.title} currentPath={`/blog/${entry.data.slug}`}>
+  <article class="max-w-3xl mx-auto px-6 py-12 md:py-16">
+    <header class="mb-12">
+      <h1 class="font-serif text-4xl md:text-5xl mb-4 text-foreground">
+        {entry.data.title}
+      </h1>
+      <div class="flex gap-4 text-sm text-muted-foreground">
+        <time datetime={entry.data.published_at}>
+          {new Date(entry.data.published_at).toLocaleDateString('ko-KR', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          })}
+        </time>
+      </div>
+    </header>
+
+    <div class="prose prose-lg max-w-none">
+      <Content />
+    </div>
+
+    <PostNavigation
+      prevPost={prevPost ? { url: `/blog/${prevPost.data.slug}`, title: prevPost.data.title } : null}
+      nextPost={nextPost ? { url: `/blog/${nextPost.data.slug}`, title: nextPost.data.title } : null}
+      listUrl="/blog"
+    />
+  </article>
+</BaseLayout>
