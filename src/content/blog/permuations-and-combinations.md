@@ -1,7 +1,7 @@
 ---
 created_at: '2021-04-24T10:57:00.000Z'
 feature_image: https://images.unsplash.com/photo-1673245886349-6b0cae152c50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDR8fGJhbGxzfGVufDB8fHx8MTczMDUxODI1Mnww&ixlib=rb-4.0.3&q=80&w=2000
-published_at: '2024-11-02T12:00:50.000Z'
+published_date: '2024-11-02T12:00:50.000Z'
 slug: permuations-and-combinations
 status: published
 title: 순열 조합 생성하기

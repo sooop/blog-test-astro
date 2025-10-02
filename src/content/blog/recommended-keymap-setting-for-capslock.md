@@ -1,7 +1,7 @@
 ---
 created_at: '2024-07-27T06:29:00.000Z'
 feature_image: __GHOST_URL__/content/images/2024/10/photo-1704026437958-af660fe081bb.jpeg
-published_at: '2024-10-27T10:00:19.000Z'
+published_date: '2024-10-27T10:00:19.000Z'
 slug: recommended-keymap-setting-for-capslock
 status: published
 title: 키보드 추천 세팅

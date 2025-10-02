@@ -1,6 +1,6 @@
 ---
 created_at: '2025-06-06T09:54:12.000Z'
-published_at: '2025-06-13T21:00:20.000Z'
+published_date: '2025-06-13T21:00:20.000Z'
 slug: svelte-5-attach
 status: published
 title: Svelte 5 - @attach

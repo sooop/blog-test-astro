@@ -1,7 +1,7 @@
 ---
 created_at: '2020-04-04T06:22:00.000Z'
 feature_image: __GHOST_URL__/content/images/2025/03/photo-1593987011155-542d44e8660e.jpeg
-published_at: '2025-02-01T06:22:00.000Z'
+published_date: '2025-02-01T06:22:00.000Z'
 slug: vim-ins-complete
 status: published
 title: vim의 삽입모드 단어완성

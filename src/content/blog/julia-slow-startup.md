@@ -1,7 +1,7 @@
 ---
 created_at: '2024-06-11T01:31:50.000Z'
 feature_image: https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDh8fGdpdHxlbnwwfHx8fDE3MzUyMDQ4Mzh8MA&ixlib=rb-4.0.3&q=80&w=2000
-published_at: '2024-12-26T09:21:36.000Z'
+published_date: '2024-12-26T09:21:36.000Z'
 slug: julia-slow-startup
 status: published
 title: Julia REPL의 시작 시간이 느린 문제

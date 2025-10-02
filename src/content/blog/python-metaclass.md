@@ -1,7 +1,7 @@
 ---
 created_at: '2024-12-15T06:14:46.000Z'
 feature_image: https://images.unsplash.com/photo-1703196565814-b066044e23a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDM1fHxtZXRhfGVufDB8fHx8MTczNTgyNzYwN3ww&ixlib=rb-4.0.3&q=80&w=2000
-published_at: '2025-01-04T14:30:24.000Z'
+published_date: '2025-01-04T14:30:24.000Z'
 slug: python-metaclass
 status: published
 title: 메타클래스에 관해

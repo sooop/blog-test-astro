@@ -2,11 +2,10 @@
 import { defineConfig } from 'astro/config';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
-import { katexDisplayFix } from './katex-display-fix.mjs';
 
 import tailwindcss from '@tailwindcss/vite';
 
-import sitemap from '@astrojs/sitemap';
+//import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,12 +13,11 @@ export default defineConfig({
       remarkPlugins: [remarkMath],
       rehypePlugins: [
         [rehypeKatex, {
-          output: 'mathml',
+		  output: "html",
           strict: false,
           trust: false,
           throwOnError: false
         }],
-        katexDisplayFix
       ],
       shikiConfig: { theme: 'vitesse-light',
         wrap: true,
@@ -31,5 +29,4 @@ export default defineConfig({
   },
 
   site: 'https://soooprmx.com',
-  integrations: [sitemap()]
 });

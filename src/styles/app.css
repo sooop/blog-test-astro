@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import 'katex/dist/katex.min.css';
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -202,9 +203,25 @@
   @apply border-b border-border px-4 py-3 text-foreground;
 }
 
+/* KaTeX inline math */
+.prose .katex {
+  font-size: 1em;
+}
+
 /* KaTeX math display styles */
 .katex-display {
   text-align: center;
-  margin: 1.5rem 0;
+  margin: 2rem 0;
+  font-size: 1.3em;
+  line-height: 2.2;
   @apply mx-auto justify-center w-full block;
+}
+
+/* Matrix row spacing */
+.katex-display .mtable > .arrayrow {
+  padding: 0.5em 0;
+}
+
+.katex-display .mtable {
+  row-gap: 1em;
 }

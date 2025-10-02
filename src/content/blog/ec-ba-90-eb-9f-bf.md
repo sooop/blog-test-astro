@@ -1,6 +1,6 @@
 ---
 created_at: '2004-11-27T02:12:00.000Z'
-published_at: '2004-11-27T02:12:00.000Z'
+published_date: '2004-11-27T02:12:00.000Z'
 slug: -ec-ba-90-eb-9f-bf
 status: published
 title: 캐럿

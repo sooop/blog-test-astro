@@ -4,10 +4,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const blogPosts = await getCollection('blog');
 
-// Sort by published_at in descending order (newest first)
+// Sort by published_date in descending order (newest first)
 const sortedPosts = blogPosts.sort((a, b) => {
-  const dateA = new Date(a.data.published_at).getTime();
-  const dateB = new Date(b.data.published_at).getTime();
+  const dateA = new Date(a.data.published_date).getTime();
+  const dateB = new Date(b.data.published_date).getTime();
   return dateB - dateA;
 });
 ---
@@ -30,10 +30,10 @@ const sortedPosts = blogPosts.sort((a, b) => {
             <div class="flex-1">
               <div class="flex items-center gap-3 mb-3">
                 <time
-                  datetime={post.data.published_at}
+                  datetime={post.data.published_date}
                   class="text-sm text-muted-foreground"
                 >
-                  {new Date(post.data.published_at).toLocaleDateString('ko-KR', {
+                  {new Date(post.data.published_date).toLocaleDateString('ko-KR', {
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric'

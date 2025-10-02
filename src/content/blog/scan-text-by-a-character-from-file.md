@@ -1,7 +1,7 @@
 ---
 created_at: '2019-04-13T05:56:54.000Z'
 feature_image: https://images.unsplash.com/photo-1652643105908-d1e6eea8c147?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDE2fHxsZXR0ZXJ8ZW58MHx8fHwxNzMzNzEyODkxfDA&ixlib=rb-4.0.3&q=80&w=2000
-published_at: '2024-12-14T21:00:04.000Z'
+published_date: '2024-12-14T21:00:04.000Z'
 slug: scan-text-by-a-character-from-file
 status: published
 title: 파일에서 한 글자씩 스캔하는 방법

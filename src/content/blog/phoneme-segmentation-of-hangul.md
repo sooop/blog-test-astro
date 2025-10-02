@@ -1,7 +1,7 @@
 ---
 created_at: '2013-04-07T15:55:41.000Z'
 feature_image: https://images.unsplash.com/photo-1691071089871-3371cbd0cf39?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDR8fGhhbmd1bHxlbnwwfHx8fDE3MzAyMDQ3NzF8MA&ixlib=rb-4.0.3&q=80&w=2000
-published_at: '2024-10-29T14:39:52.000Z'
+published_date: '2024-10-29T14:39:52.000Z'
 slug: phoneme-segmentation-of-hangul
 status: published
 title: 한글을 초성, 중성, 종성으로 분리하기

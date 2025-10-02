@@ -1,7 +1,7 @@
 ---
 created_at: '2025-02-12T14:53:31.000Z'
 feature_image: __GHOST_URL__/content/images/2025/02/photo-1608556984704-fa578c96e6eb.jpeg
-published_at: '2025-02-14T01:23:06.000Z'
+published_date: '2025-02-14T01:23:06.000Z'
 slug: vim-jeonggyusig-suryang-hanjeongja
 status: published
 title: vim 정규식 수량 한정자

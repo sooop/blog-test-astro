@@ -1,15 +1,15 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostNavigation from '../../components/PostNavigation.astro';
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection('blog');
 
-  // Sort by published_at descending (newest first)
+  // Sort by published_date descending (newest first)
   const sortedEntries = blogEntries.sort((a, b) => {
-    const dateA = new Date(a.data.published_at).getTime();
-    const dateB = new Date(b.data.published_at).getTime();
+    const dateA = new Date(a.data.published_date).getTime();
+    const dateB = new Date(b.data.published_date).getTime();
     return dateB - dateA;
   });
 
@@ -24,7 +24,7 @@ export async function getStaticPaths() {
 }
 
 const { entry, prevPost, nextPost } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 <BaseLayout title={entry.data.title} currentPath={`/blog/${entry.data.slug}`}>
@@ -34,8 +34,8 @@ const { Content } = await entry.render();
         {entry.data.title}
       </h1>
       <div class="flex gap-4 text-sm text-muted-foreground">
-        <time datetime={entry.data.published_at}>
-          {new Date(entry.data.published_at).toLocaleDateString('ko-KR', {
+        <time datetime={entry.data.published_date}>
+          {new Date(entry.data.published_date).toLocaleDateString('ko-KR', {
             year: 'numeric',
             month: 'long',
             day: 'numeric'

@@ -1,7 +1,7 @@
 ---
 created_at: '2025-03-27T00:11:29.000Z'
 feature_image: https://images.unsplash.com/photo-1742240483286-5fc6884638a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8YWxsfDV8fHx8fHx8fDE3NDM2OTkzOTl8&ixlib=rb-4.0.3&q=80&w=2000
-published_at: '2025-04-05T22:00:55.000Z'
+published_date: '2025-04-05T22:00:55.000Z'
 slug: montihol-munjereul-ihaehaneun-dareun-bangbeob
 status: published
 title: 몬티홀 문제를 이해하는 다른 방법

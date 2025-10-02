@@ -1,7 +1,7 @@
 ---
 created_at: '2023-03-25T10:00:00.000Z'
 feature_image: https://images.unsplash.com/photo-1544383835-bda2bc66a55d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDY1fHxmaWxlJTIwc3lzdGVtfGVufDB8fHx8MTczOTc3MzI0N3ww&ixlib=rb-4.0.3&q=80&w=2000
-published_at: '2025-02-20T21:00:04.000Z'
+published_date: '2025-02-20T21:00:04.000Z'
 slug: -ed-8c-8c-ec-9d-b4-ec-8d-ac-pathlib--ec-82-ac-ec-9a-a9-eb-b2-95
 status: published
 title: 파이썬 pathlib 사용법

@@ -1,7 +1,7 @@
 ---
 created_at: '2024-11-01T02:50:15.000Z'
 feature_image: https://images.unsplash.com/photo-1726629597576-bc9d23835165?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8YWxsfDN8fHx8fHx8fDE3MzA0MzU4NDh8&ixlib=rb-4.0.3&q=80&w=2000
-published_at: '2024-11-01T12:00:21.000Z'
+published_date: '2024-11-01T12:00:21.000Z'
 slug: msys2
 status: published
 title: MSYS2

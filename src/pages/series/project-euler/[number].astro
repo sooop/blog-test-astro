@@ -1,20 +1,25 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import PostNavigation from '../../../components/PostNavigation.astro';
 
 export async function getStaticPaths() {
   const projectEulerPosts = await getCollection('project-euler');
 
+  // Helper to extract filename without extension
+  const getFileNumber = (filePath: string) => {
+    return filePath.split('/').pop()?.replace('.md', '') ?? '';
+  };
+
   // Sort by number ascending
   const sortedPosts = projectEulerPosts.sort((a, b) => {
-    const numA = parseInt(a.id.replace('.md', ''));
-    const numB = parseInt(b.id.replace('.md', ''));
+    const numA = parseInt(getFileNumber(a.filePath ?? ''));
+    const numB = parseInt(getFileNumber(b.filePath ?? ''));
     return numA - numB;
   });
 
   return sortedPosts.map((post, index) => ({
-    params: { number: post.id.replace('.md', '') },
+    params: { number: getFileNumber(post.filePath ?? '') },
     props: {
       post,
       prevPost: index > 0 ? sortedPosts[index - 1] : null,
@@ -24,7 +29,11 @@ export async function getStaticPaths() {
 }
 
 const { post, prevPost, nextPost } = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post)
+
+const getFileNumber = (filePath: string) => {
+  return filePath.split('/').pop()?.replace('.md', '') ?? '';
+};
 
 const formatDate = (dateString?: string) => {
   if (!dateString) return null;
@@ -57,8 +66,8 @@ const formatDate = (dateString?: string) => {
     </div>
 
     <PostNavigation
-      prevPost={prevPost ? { url: `/series/project-euler/${prevPost.id.replace('.md', '')}`, title: prevPost.data.title } : null}
-      nextPost={nextPost ? { url: `/series/project-euler/${nextPost.id.replace('.md', '')}`, title: nextPost.data.title } : null}
+      prevPost={prevPost ? { url: `/series/project-euler/${getFileNumber(prevPost.filePath ?? '')}`, title: prevPost.data.title } : null}
+      nextPost={nextPost ? { url: `/series/project-euler/${getFileNumber(nextPost.filePath ?? '')}`, title: nextPost.data.title } : null}
       listUrl="/series/project-euler"
     />
   </article>

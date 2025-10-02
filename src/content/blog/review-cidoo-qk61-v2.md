@@ -1,7 +1,7 @@
 ---
 created_at: '2024-12-07T15:42:17.000Z'
 feature_image: __GHOST_URL__/content/images/2024/12/203A3777.webp
-published_at: '2024-12-09T15:00:00.000Z'
+published_date: '2024-12-09T15:00:00.000Z'
 slug: review-cidoo-qk61-v2
 status: published
 title: CIDOO QK61 V2

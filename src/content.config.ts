@@ -2,7 +2,7 @@ import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 const projectEuler = defineCollection({
-  type: 'content',
+  loader: glob({ pattern: '**/*.md', base: './src/content/project-euler' }),
   schema: z.object({
     title: z.string(),
     published_date: z.coerce.date(),
@@ -12,10 +12,22 @@ const projectEuler = defineCollection({
     feature_image: z.string().optional(),
     category: z.string().optional(),
     tags: z.array(z.string()).optional(),
-    layout: z.string().default('../../../layouts/MarkdownLayout.astro')
   })
 });
 
+const blog = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
+  schema: z.object({
+    title: z.string(),
+    slug: z.string(),
+    published_date: z.coerce.date(),
+    created_at: z.string().optional(),
+    modified_date: z.coerce.date().optional(),
+    status: z.string().optional(),
+  }),
+});
+
 export const collections = {
-  'project-euler': projectEuler
+  'project-euler': projectEuler,
+  blog, // temporarily disabled for performance testing
 };

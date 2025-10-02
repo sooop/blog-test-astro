@@ -1,7 +1,7 @@
 ---
 created_at: '2024-10-30T14:11:57.000Z'
 feature_image: https://images.unsplash.com/photo-1655196601100-8bfb26cf99e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDd8fGJyb3dzZXJ8ZW58MHx8fHwxNzMwMjk4NDg3fDA&ixlib=rb-4.0.3&q=80&w=2000
-published_at: '2024-10-30T19:00:34.000Z'
+published_date: '2024-10-30T19:00:34.000Z'
 slug: reinstall-edge-in-terminal
 status: published
 title: 윈도 초기화 후 Edge가 없어질 때

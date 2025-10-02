@@ -1,7 +1,7 @@
 ---
 created_at: '2023-09-23T03:47:00.000Z'
 feature_image: https://images.unsplash.com/photo-1604014317029-5bffcc1b7742?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDJ8fGtpbGx8ZW58MHx8fHwxNzMxNTA2MzE0fDA&ixlib=rb-4.0.3&q=80&w=2000
-published_at: '2024-11-15T21:00:53.000Z'
+published_date: '2024-11-15T21:00:53.000Z'
 slug: -ec-98-a4-ec-9d-bc-eb-9f-ac--ed-94-84-eb-a1-9c-ec-a0-9d-ed-8a-b8-34
 status: published
 title: 프로젝트 오일러 033

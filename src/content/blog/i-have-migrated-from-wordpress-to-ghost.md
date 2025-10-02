@@ -1,7 +1,7 @@
 ---
 created_at: '2024-10-22T15:11:26.000Z'
 feature_image: https://images.unsplash.com/photo-1636969350238-a678edbbbb67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDMzfHxmdXR1cmlzdGljfGVufDB8fHx8MTcyOTYxMTY5NXww&ixlib=rb-4.0.3&q=80&w=2000
-published_at: '2024-10-22T15:41:57.000Z'
+published_date: '2024-10-22T15:41:57.000Z'
 slug: i-have-migrated-from-wordpress-to-ghost
 status: published
 title: 워드프레스에서 고스트로 이전

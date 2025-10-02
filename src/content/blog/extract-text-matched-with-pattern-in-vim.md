@@ -1,7 +1,7 @@
 ---
 created_at: '2024-08-03T06:31:00.000Z'
 feature_image: https://images.unsplash.com/photo-1649127473471-6c6b78919415?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDJ8fGV4dHJhY3R8ZW58MHx8fHwxNzI5NjA3MTk1fDA&ixlib=rb-4.0.3&q=80&w=2000
-published_at: '2024-08-03T06:31:00.000Z'
+published_date: '2024-08-03T06:31:00.000Z'
 slug: extract-text-matched-with-pattern-in-vim
 status: published
 title: vim에서 패턴에 매칭되는 영역을 추출하기

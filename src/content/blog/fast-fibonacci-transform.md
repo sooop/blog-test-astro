@@ -1,7 +1,7 @@
 ---
 created_at: '2015-10-10T06:00:13.000Z'
 feature_image: https://images.unsplash.com/photo-1711075781376-bc5107736730?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDh8fGZpYm9uYWNjaXxlbnwwfHx8fDE3MzAwMTE4NTl8MA&ixlib=rb-4.0.3&q=80&w=2000
-published_at: '2024-10-27T12:00:21.000Z'
+published_date: '2024-10-27T12:00:21.000Z'
 slug: fast-fibonacci-transform
 status: published
 title: 빠른 피보나치 변환

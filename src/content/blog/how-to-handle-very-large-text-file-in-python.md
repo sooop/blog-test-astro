@@ -1,7 +1,7 @@
 ---
 created_at: '2017-04-15T10:42:39.000Z'
 feature_image: https://images.unsplash.com/photo-1645967732161-db5c711e9e61?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDh8fG1hc3NpdmV8ZW58MHx8fHwxNzMzNDcxMDQ0fDA&ixlib=rb-4.0.3&q=80&w=2000
-published_at: '2024-12-13T21:00:11.000Z'
+published_date: '2024-12-13T21:00:11.000Z'
 slug: how-to-handle-very-large-text-file-in-python
 status: published
 title: 대용량 파일을 끊어서 읽는 방법

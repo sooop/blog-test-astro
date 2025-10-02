@@ -1,6 +1,6 @@
 ---
 created_at: '2025-03-26T10:56:38.000Z'
-published_at: '2025-04-03T16:34:57.000Z'
+published_date: '2025-04-03T16:34:57.000Z'
 slug: conditional-probability-1
 status: published
 title: 조건부 확률 1

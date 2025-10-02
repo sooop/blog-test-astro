@@ -1,7 +1,7 @@
 ---
 created_at: '2022-02-24T12:14:00.000Z'
 feature_image: https://images.unsplash.com/photo-1682627101090-323012f3b832?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDExfHxpbnNlY3VyZXxlbnwwfHx8fDE3MzA2NDU1MDF8MA&ixlib=rb-4.0.3&q=80&w=2000
-published_at: '2024-11-05T21:00:17.000Z'
+published_date: '2024-11-05T21:00:17.000Z'
 slug: when-your-wifi-is-insecure
 status: published
 title: 집 와이파이가 보안이 취약하다할 때
