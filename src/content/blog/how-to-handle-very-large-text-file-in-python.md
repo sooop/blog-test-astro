@@ -8,16 +8,123 @@ title: 대용량 파일을 끊어서 읽는 방법
 modified_date: '2024-12-13T21:00:10.000Z'
 ---
 
-특정한 구분자로 연결되어 있는 데이터들을 읽어들인다면 보통 파일을 read한 다음, 그 내용을 구분자로 split 하는 방법을 떠올릴 수 있습니다. 틀린 방법도 아니거니와 많은 경우에 이런 방법을 실제로 사용합니다. 
+주로 텍스트 형식으로 된 파일을 읽어서 사용할 때에는 파일의 내용을 읽어들인 다음, 구분자를 기준으로 나누어서 처리합니다. 많은 경우 이 구분자는 개행문자인 경우가 많고, 문자열 객체의 `splitlines()`를 사용할 수 있고, 혹은 파일 객체를 반복자처럼 취급하여 `for line in f:` 와 같이 반복구문을 사용하는 방법이 있습니다. 
 
-하지만 만약 다루는 데이터의 양이 아주 많다면 이 간단한 작업에서 문제가 생기기 시작합니다. 만약 텍스트 파일이 수십 기가 바이트에 달한다면 메모리로 로드하는 것조차 문제가 됩니다. 메모리에 로드한 후에 split을 하게 되면 다시 거대한 리스트를 생성해야 하기 때문에 메모리에서 리스트로 분해하는 것은 좋은 생각이 아닙니다. 
+그런데 전자의 경우에는 파일의 전체 내용을 메모리에 로드하는 과정이 포함됩니다. 만약 파일이 무식하게 큰 대용량 파일인 경우, 전체를 메모리에 로드하면 메모리 부족으로 앱이 죽는 문제가 발생할 수 있습니다. 그리고 때로는 파일을 라인단위로 읽기 힘든 경우가 있습니다. 데이터의 구분이 개행이 아니라 콜론이나 세미콜론 등의 다른 구분자를 사용하는 경우도 있을 수 있거든요. 
 
-이런 유사한 상황에 대해서 이미 파이썬 공식문서에서도 루프를 돌기 위해서 거대한 리스트를 만들기 보다는 제너레이터를 사용할 것을 권장합니다. 예를 들어 백 만 번의 루프를 돌기 위해서 정수 백 만 개가 있는 리스트를 사용하는 대신, range 객체를 사용하는 것으로도 충분합니다. 이와 유사하게 대용량 파일을 처리해야 하는 경우에는 특정한 크기 이내의 단위로 여러 번 나눠 읽는 것이 권장됩니다. 
+따라서 특정한 구분자를 기준으로 조금씩 파일의 내용을 읽어서 처리해야 하는 경우가 있습니다. 프로젝트 오일러의 몇몇 문제들은 파일을 읽어와서 그 내용을 분석하는 것인데, 그 중에는 콤마로 구분된 이름들을 처리하는 경우가 있습니다.  파일의 크기는 물론 그리 크지 않지만, 임의의 파일을 처리하는 상황을 가정하면 안전하게 처리하기 위해서는 콤마를 구분자로 하여 내용을 끊는 처리가 필요합니다.  
 
-아래와 같이 조금씩 버퍼로 읽어들인 다음 구분자까지 떼어내어 소모하는 방식의 제너레이터를 만든다면 대용량 파일을 조금씩 읽어들여서 순차적으로 처리할 수 있습니다. 
+아래와 같이 작성할 수 있습니다. 
 
-파라미터 f는 파일처럼 read(amt) 를 지원하는 모든 타입을 받도록 IOBase 타입으로 정의했습니다. open() 함수로 파일을 열거나, urlopen() 함수를 이용해서 네트워크를 통해 읽어들이게 되는 파일에도 동일하게 적용할 수 있습니다. 
+```python
+from io import IOBase
+from typing import Generator
 
-사실 "행 단위"로 처리하려는 경우에는 이런 함수를 따로 작성하지 않아도 됩니다. open() 함수를 통해서 얻을 수 있는 파일 핸들은 기본적으로 행단위로 읽어들이는 것이 가능합니다. 
+def reader(f: IOBase, /, delimiter:str|bytes='\n', chunk_size:int=8192) -> Geneator[bytes, None, None]:
+	delim = delimiter if isinstance(delimiter, bytes) else delimiter.encode()
+	buffer = bytearray()
+	dellen = len(delim)
+	while True:
+		chunk = f.read(chunk_size)
+		if not chunk:
+			yield buffer
+			return
+		buffer.extend(chunk)
+		while True:
+			try:
+				idx = buffer.index(delim)
+				yield buffer[:idx].decode()
+				buffer[:idx + dellen] = []
+			except ValueError:
+				break
+```
 
-다만 암묵적으로 처리되기 때문에 행단위로만 처리가 가능하며, 만약 텍스트 파일 내의 내용이 개행이 아니라 콤마 등의 다른 문자라면 위와 같은 별도의 함수를 사용하여 처리하는 것이 바람직합니다.
+파라미터 f는 파일처럼 read(amt) 를 지원하는 모든 타입을 사용할 수 있는 IOBase 타입기반의 객체는 모두 사용할 수 있습니다. 즉 `StringIO`나 파일, `urlopen()` 함수의 응답객체 등을 모두 사용할 수 있습니다. (`read()`, `open()`메소드를 가지고 있는 모든 객체에 적용 가능합니다.)
+
+
+### requests를 사용하기
+
+최근에는 urllib.request 외에 `requests`도 많이 쓰입니다. 거의 표준 라이브러리보다 더 많이 사용되는 것 같으니, `requests`를 사용하여 대용량 파일을 구분자 단위로 스트리밍하는 방법도 살펴봅시다. 버퍼를 사용하여 처리하는 방식은 동일하며, `iter_content()`를 사용하여 특정한 바이트 수 이내로 반복하여 읽어들이는 방법만 다릅니다.  
+
+```python
+from typing import Generator
+import requests
+
+def stream_reader(url, /, delimiter:str|bytes=',', chunk_size: int=1024) -> Generator[bytes, None, None]:
+	res = requests.get(url, stream=True)
+	if res.status_code != 200:
+		raise Exception("HTTP response is not valid")
+	buffer = bytearray()
+	delim = delimiter if isinstance(delimiter, bytes) else delimiter.encode()
+	dellen = len(delim)
+	for chunk in res.iter_content(chunk_size=chunk_size):
+		buffer.extend(chunk)
+		while:
+			try:
+				idx = buffer.index(delim)
+				yield bytes(buffer[:idx])
+				buffer[:idx+dellen] = []
+			except ValueError:
+				# .index에서 인덱스를 찾지 못하면 ValueError가 발생
+				break
+	if buffer:
+		yield bytes(buffer)
+```
+
+### httpx를 사용하기
+
+개인적으로는 requests보다는 httpx를 더 선호하는 편입니다. httpx는 requests의 API와 호환되는 부분이 많지만, 스트리밍 수신의 경우에는 블럭으로 처리하도록 디자인되어 있습니다. 따라서 블럭외부에서 예외 등으로 블럭을 빠져나가면 HTTP 연결은 자동으로 끊어지게 됩니다.
+
+```python
+
+def stream_reader(url, /, delimiter:str|bytes=',', chunk_size: int=1024) -> Generator[bytes, None, None]:
+	with httpx.stream("GET", url) as res:
+		# 응답코드가 2XX이 아니면 예외 던짐
+		res.raise_for_status()
+		buffer = bytearray()
+		delim = delimiter if isinstance(delimiter, bytes) else delimiter.encode()
+		dellen = len(delim)
+		for chunk in res.iter_bytes(chunk_size=chunk_size):
+			buffer.extend(chunk)
+			while:
+				try:
+					idx = buffer.index(delim)
+					yield bytes(buffer[:idx])
+					buffer[:idx+dellen] = []
+				except ValueError:
+					# .index에서 인덱스를 찾지 못하면 ValueError가 발생
+					break
+		if buffer:
+			yield bytes(buffer)
+```
+
+httpx를 사용하면 거의 동일한 방식으로 비동기 코드로 전환할 수 있습니다. 
+
+```python
+async def stream_reader_async(url: str, 
+	/, 
+	delimiter:str|bytes=',', 
+	chunk_size: int=1024) -> AsyncGenerator[bytes, None]:
+	
+	client = httpx.AsyncClient()
+	async with client.stream("GET", url) as res:
+		res.raise_for_status()
+		buffer = bytearray()
+		delim = delimiter if isinstance(delimiter, bytes) else delimiter.encode()
+		dellen = len(delim)
+		async for chunk in res.iter_bytes(chunk_size=chunk_size):
+			buffer.extend(chunk)
+			while True:
+				try:
+					idx = buffer.index(delim)
+					yield bytes(buffer[:idx])
+					buffer[:idx+dellen] = []
+				except ValueError:
+					break
+			if buffer:
+				yield bytes(buffer)
+```
+
+### 기타
+
+물론 이 코드도 완벽하지 않습니다. 예를 들어 구분자가 계속해서 나타나지 않으면 버퍼의 크기가 무한정 커지게 되는데, 이를 검사하는 로직도 필요합니다. (물론 chunk의 크기가 일정하므로 간단히 계산할 수 있습니다.)
