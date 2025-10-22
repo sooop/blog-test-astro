@@ -6,7 +6,7 @@ slug: review-cidoo-qk61-v2
 status: published
 title: CIDOO QK61 V2
 modified_date: 2024-12-09T15:11:02.000Z
-description: 60% 배열 최고 가성비, QMK/VIA 지원 61키 유무선 키보드
+custom_excerpt: 60% 배열 최고 가성비, QMK/VIA 지원 61키 유무선 키보드
 ---
 ![[Pasted image 20251022180503.png]] 아니 무슨 사람 팔이 열 개 스무 개인 것도 아니고, 내가 무슨 키보드 유튜버가 될 것도 아니라서 지금 가지고 있는 키보드나 잘 쓰고 잘 관리해야지...하던 차에 이런 키보드가 나왔다는 걸 알게 되었습니다.
 

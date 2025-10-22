@@ -1,11 +1,12 @@
 ---
-created_at: '2013-04-07T15:55:41.000Z'
+created_at: 2013-04-07T15:55:41.000Z
 feature_image: https://images.unsplash.com/photo-1691071089871-3371cbd0cf39?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDR8fGhhbmd1bHxlbnwwfHx8fDE3MzAyMDQ3NzF8MA&ixlib=rb-4.0.3&q=80&w=2000
-published_date: '2024-10-29T14:39:52.000Z'
+published_date: 2024-10-29T14:39:52.000Z
 slug: phoneme-segmentation-of-hangul
 status: published
 title: 한글을 초성, 중성, 종성으로 분리하기
-modified_date: '2024-10-29T14:39:52.000Z'
+modified_date: 2024-10-29T14:39:52.000Z
+custom_excerpt: 한글 문자의 음소 분리방법
 ---
 
 한글로 된 텍스트를 많이 다루는 경우, 종종 초성, 중성, 종성을 분리해야 하는 경우가 있습니다. (요즘은 잘 모르는 사람이 많은) 초성 검색이나 한글 단어에 대한 자동 완성 같은 것을 구현하려면 필요한 부분이기도 합니다. 

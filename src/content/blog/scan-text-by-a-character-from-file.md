@@ -1,11 +1,12 @@
 ---
-created_at: '2019-04-13T05:56:54.000Z'
+created_at: 2019-04-13T05:56:54.000Z
 feature_image: https://images.unsplash.com/photo-1652643105908-d1e6eea8c147?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDE2fHxsZXR0ZXJ8ZW58MHx8fHwxNzMzNzEyODkxfDA&ixlib=rb-4.0.3&q=80&w=2000
-published_date: '2024-12-14T21:00:04.000Z'
+published_date: 2024-12-14T21:00:04.000Z
 slug: scan-text-by-a-character-from-file
 status: published
 title: 파일에서 한 글자씩 스캔하는 방법
-modified_date: '2024-12-14T21:00:04.000Z'
+modified_date: 2024-12-14T21:00:04.000Z
+custom_excerpt: 파이썬에서 줄 단위로 구분할 수 없는 텍스트 데이터를 글자단위로 스트리밍하는 방법
 ---
 일전에 특정한 구분자 단위로 파일을 읽는 방식으로 대용량 파일 전체를 메모리에 올리지 않고 읽어들여서 처리하는 방법에 대한 글을 발행한 적이 있습니다. 이후에 네이버 지식인에서 조금 다른 대용량 파일 처리에 대한 문제를 발견했습니다.
 

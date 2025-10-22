@@ -6,7 +6,7 @@ slug: omit-user-selection-popup-of-git
 status: published
 title: git 사용자 선택 팝업 생략하기
 modified_date: 2024-10-26T09:40:43.000Z
-description:
+custom_excerpt: fetch, pull, push 시에 github 사용자 선택 화면이 표시되는 문제 해결
 ---
 
 명령줄에서 git을 사용해서 github에 있는 저장소에 접근하려고 하면 git 사용자를 선택하라는 GUI 창이 표시되는 경우가 있는데, 이게 제법 성가십니다. 처음에는 github 사용자 인증 정보가 저장이 안돼서 생기는 문제라고 생각했었는데, 이미 저장되어 있는 github 사용자가 2개가 되면서, 어떤 사용자로 접근할 것인지를 묻는 내용이었네요.

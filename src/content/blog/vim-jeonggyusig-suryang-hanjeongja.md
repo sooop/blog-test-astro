@@ -1,11 +1,12 @@
 ---
-created_at: '2025-02-12T14:53:31.000Z'
+created_at: 2025-02-12T14:53:31.000Z
 feature_image: __GHOST_URL__/content/images/2025/02/photo-1608556984704-fa578c96e6eb.jpeg
-published_date: '2025-02-14T01:23:06.000Z'
+published_date: 2025-02-14T01:23:06.000Z
 slug: vim-jeonggyusig-suryang-hanjeongja
 status: published
 title: vim 정규식 수량 한정자
-modified_date: '2025-02-14T01:23:06.000Z'
+modified_date: 2025-02-14T01:23:06.000Z
+custom_excerpt: vim 정규식 패턴의 고급사용법. 하지만 vim에서만 사용되니 알아둘 필요는 없습니다.
 ---
 정규식 패턴 중 `a`는 a를 0번 이상 매치하는 '0개 이상'을 의미하는 수량 한정자입니다. 그런데 기본적으로 `*` 는 조건을 만족하는 가능한 많은 문자에 매칭됩니다. 한 쪽에서는 이러한 특성을 탐욕적(greedy)이라고 표현하기도 합니다. 보통은 a와 같은 특정한 글자보다는 다른 선택자나 그룹을 사용하는 경우가 더 많은데, 적절한 범위 내에서 원하는 부분만 정확하게 선택하려는 경우에는 이 탐욕적인 특성이 상당히 걸림돌로 작용하는 경우가 많습니다.
 

@@ -1,11 +1,12 @@
 ---
-created_at: '2024-07-27T06:29:00.000Z'
+created_at: 2024-07-27T06:29:00.000Z
 feature_image: __GHOST_URL__/content/images/2024/10/photo-1704026437958-af660fe081bb.jpeg
-published_date: '2024-10-27T10:00:19.000Z'
+published_date: 2024-10-27T10:00:19.000Z
 slug: recommended-keymap-setting-for-capslock
 status: published
 title: 키보드 추천 세팅
-modified_date: '2024-10-27T10:00:19.000Z'
+modified_date: 2024-10-27T10:00:19.000Z
+custom_excerpt: capslock키를 포기하고 자유를 얻는 방법
 ---
 
 여러분은 CapsLock키를 알고 계십니까? 알고 있다면 얼마나 많이, 유용하게 쓰시나요?

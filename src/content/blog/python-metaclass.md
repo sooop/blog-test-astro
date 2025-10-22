@@ -1,11 +1,12 @@
 ---
-created_at: '2024-12-15T06:14:46.000Z'
+created_at: 2024-12-15T06:14:46.000Z
 feature_image: https://images.unsplash.com/photo-1703196565814-b066044e23a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDM1fHxtZXRhfGVufDB8fHx8MTczNTgyNzYwN3ww&ixlib=rb-4.0.3&q=80&w=2000
-published_date: '2025-01-04T14:30:24.000Z'
+published_date: 2025-01-04T14:30:24.000Z
 slug: python-metaclass
 status: published
 title: 메타클래스에 관해
-modified_date: '2025-01-04T14:30:24.000Z'
+modified_date: 2025-01-04T14:30:24.000Z
+custom_excerpt: 알아두어도 별 쓸모는 없는 메타클래스 만드는 법
 ---
 메타클래스(metaclass)는 '**클래스를 만드는 클래스**'입니다. 이 정의는 정확하지만, 메타클래스를 처음 접하는 개발자에게는 여전히 추상적으로 느껴집니다. 메타클래스가 어려운 이유는 일상적인 프로그래밍에서 거의 사용되지 않으며, 파이썬의 객체 시스템에 대한 깊은 이해를 요구하기 때문입니다.
 

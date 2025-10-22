@@ -5,6 +5,7 @@ slug: svelte-5-attach
 status: published
 title: Svelte 5 Attachment
 modified_date: 2025-06-13T21:00:20.000Z
+custom_excerpt: 이전에 `use:`로 사용되던 기능이 반응성 블럭으로 업그레이드 되었습니다.
 ---
 `use:`는 특정한 HTML 요소가 마운트될 때 지정된 함수(액션이라고 부릅니다)를 호출하여 해당 요소에 어떤 기능을 부여하거나 외부 라이브러리를 적용할 수 있는 기능입니다. 이는 Svelte용으로 따로 배포되지 않은 외부 라이브러리를 그대로 사용할 수 있도록 해주는 매력적인 기능입니다.
 

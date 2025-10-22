@@ -5,6 +5,7 @@ slug: tips-for-using-functions-in-julia
 status: published
 title: "Julia 함수형 프로그래밍: 연산자와 배열 처리"
 modified_date: 2024-10-26T09:40:15.000Z
+custom_excerpt: Julia의 연산자와 함수 사용방법에 관해
 ---
 ## 연산자의 함수적 표기
 

@@ -1,11 +1,12 @@
 ---
-created_at: '2024-10-30T14:11:57.000Z'
+created_at: 2024-10-30T14:11:57.000Z
 feature_image: https://images.unsplash.com/photo-1655196601100-8bfb26cf99e9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDd8fGJyb3dzZXJ8ZW58MHx8fHwxNzMwMjk4NDg3fDA&ixlib=rb-4.0.3&q=80&w=2000
-published_date: '2024-10-30T19:00:34.000Z'
+published_date: 2024-10-30T19:00:34.000Z
 slug: reinstall-edge-in-terminal
 status: published
 title: 윈도 초기화 후 Edge가 없어질 때
-modified_date: '2024-10-30T19:00:34.000Z'
+modified_date: 2024-10-30T19:00:34.000Z
+custom_excerpt: Edge는 나름 쓸만한 브라우저라는 걸 깨닫자마자 무슨 일이 있어나게 되는데...
 ---
 
 최근 노트북이 갑자기 상태가 안 좋아져서 초기화를 한 번 했습니다.  손수 포맷하고 클린 설치를 한 것은 아니었고 초기화 기능을 사용해서 윈도가 설치된 드라이브만 삭제하고 재설치를 했더랬죠.

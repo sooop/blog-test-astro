@@ -1,11 +1,12 @@
 ---
-created_at: '2024-10-09T20:40:50.000Z'
+created_at: 2024-10-09T20:40:50.000Z
 feature_image: https://images.unsplash.com/photo-1719139931271-04c0284b0603?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDZ8fEhhbmd1bHxlbnwwfHx8fDE3Mjk2MTE3NTJ8MA&ixlib=rb-4.0.3&q=80&w=2000
-published_date: '2024-10-09T20:40:50.000Z'
+published_date: 2024-10-09T20:40:50.000Z
 slug: word-spacing-in-korean
 status: published
 title: 띄어쓰기에 대한 생각
-modified_date: '2024-10-26T09:39:36.000Z'
+modified_date: 2024-10-26T09:39:36.000Z
+custom_excerpt: 한국어 띄어쓰기 규정은 '너 따위가 단어가 뭔지 알고 어미와 접미사를 구분할 수 있을까?'의 문제입니다.
 ---
 
 업무 메일을 쓸 때 가장 많이 쓰는 말 중에 하나가 메일 말미에 ‘업무에 참고 **부탁 드립니다.**‘인데요, 어느 날부터 아웃룩에서 이 ‘부탁 드립니다’가 틀렸다고 맞춤법 지적을 하기 시작했습니다. 맞는 말은 ‘부탁드립니다’라고 붙여 쓰는 거라고.

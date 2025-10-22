@@ -1,11 +1,12 @@
 ---
-created_at: '2021-04-24T10:57:00.000Z'
+created_at: 2021-04-24T10:57:00.000Z
 feature_image: https://images.unsplash.com/photo-1673245886349-6b0cae152c50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDR8fGJhbGxzfGVufDB8fHx8MTczMDUxODI1Mnww&ixlib=rb-4.0.3&q=80&w=2000
-published_date: '2024-11-02T12:00:50.000Z'
+published_date: 2024-11-02T12:00:50.000Z
 slug: permuations-and-combinations
 status: published
 title: 순열 조합 생성하기
-modified_date: '2024-11-02T12:00:49.000Z'
+modified_date: 2024-11-02T12:00:49.000Z
+custom_excerpt: 순열, 조합 등 itertools 패키지의 도구들을 간단하게 직접 구현해보기
 ---
 
 파이썬의 `itertools` 모듈은 효율적인 반복작업을 위한 도구들을 제공합니다. 여러 연속열을 합쳐주는 `chain(*xs)`, 같은 연속열을 계속 반복할 수 있는 `cycle(*xs)` 등의 여러 유용한 함수들과 더불어 특정한 집합의 요소들로 만들 수 있는 모든 순열과 조합을 생성하는 `permutations()`, `combinations()`도 있습니다. 파이썬의 표준 라이브러리가 제공하는 이러한 도구들은 매우 효율적으로 구현되어 빠르게 작동합니다. 
