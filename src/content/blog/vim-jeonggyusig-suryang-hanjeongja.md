@@ -70,4 +70,4 @@ s = "...."
 result = re.sub(pat, "", s, flags=re.S)
 ```
 
-![[Pasted image 20251022182322.png]]
+![](Pasted%20image%2020251022182322.png)

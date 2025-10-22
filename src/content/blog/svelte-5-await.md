@@ -1,10 +1,10 @@
 ---
 created_at: 2025-10-20T09:54:12.000Z
-published_date: 2025-06-13T21:00:20.000Z
+published_date: 2025-09-30T21:00:20
 slug: svelte-5-await
 status: published
 title: Svelte 5 - await directive
-modified_date: 2025-06-13T21:00:20.000Z
+modified_date: 2025-09-01T21:00:20
 custom_excerpt: Svelte 5.36부터 비동기 동작이 룬 등에 추가되었습니다.
 ---
 
