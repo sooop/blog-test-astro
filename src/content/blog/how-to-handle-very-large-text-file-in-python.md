@@ -41,6 +41,11 @@ def reader(f: IOBase, /, delimiter:str|bytes='\n', chunk_size:int=8192) -> Genea
 
 파라미터 f는 파일처럼 read(amt) 를 지원하는 모든 타입을 사용할 수 있는 IOBase 타입기반의 객체는 모두 사용할 수 있습니다. 즉 `StringIO`나 파일, `urlopen()` 함수의 응답객체 등을 모두 사용할 수 있습니다. (`read()`, `open()`메소드를 가지고 있는 모든 객체에 적용 가능합니다.)
 
+---
+
+## 네트워크 스트리밍
+
+`urllib.request.urlopen()`을 호출하여 반환된 응답 객체는 그 자체로 file-like 객체이기 때문에 위 방법을 그대로 사용할 수 있습니다. 만약 `requests`나 `httpx`와 같은 서드파티 네트워크 라이브러리를 사용한다면 그에 맞게 별도의 구현이 필요합니다.
 
 ### requests를 사용하기
 

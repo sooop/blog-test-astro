@@ -1,11 +1,11 @@
 ---
-created_at: '2023-03-25T10:00:00.000Z'
+created_at: 2023-03-25T10:00:00.000Z
 feature_image: https://images.unsplash.com/photo-1544383835-bda2bc66a55d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDY1fHxmaWxlJTIwc3lzdGVtfGVufDB8fHx8MTczOTc3MzI0N3ww&ixlib=rb-4.0.3&q=80&w=2000
-published_date: '2025-02-20T21:00:04.000Z'
-slug: -ed-8c-8c-ec-9d-b4-ec-8d-ac-pathlib--ec-82-ac-ec-9a-a9-eb-b2-95
+published_date: 2025-02-20T21:00:04.000Z
+slug: how-to-use-pathlib-in-python
 status: published
 title: 파이썬 pathlib 사용법
-modified_date: '2025-02-20T21:00:04.000Z'
+modified_date: 2025-02-20T21:00:04.000Z
 ---
 
 파이썬에서는 `os.path` 라는 파일 시스템 내의 경로를 다루는 모듈이 있습니다. 이 모듈을 주로 사용하던 예전에는 파일 시스템 내의 경로는 문자열로만 표현되었습니다. 그래서 경로관련 조작을 위해서는 `os.path`가 사용하는 함수를 사용해야 했습니다. 그러다보니, 특정한 경로를 생성하는 것도 상당히 불편한 점이 많았습니다. 
