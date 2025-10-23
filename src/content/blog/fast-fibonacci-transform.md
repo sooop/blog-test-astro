@@ -5,7 +5,7 @@ published_date: 2024-10-27T12:00:21.000Z
 slug: fast-fibonacci-transform
 status: published
 title: 빠른 피보나치 변환
-modified_date: 2024-10-27T12:00:20.000Z
+modified_date: 2025-10-23T15:14:26.000Z
 created: 2025-10-23T13:56:31.000Z
 updated: 2025-10-23T13:56:31.000Z
 ---

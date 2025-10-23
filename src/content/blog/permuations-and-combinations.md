@@ -1,11 +1,13 @@
 ---
-created_at: '2021-04-24T10:57:00.000Z'
+created_at: 2021-04-24T10:57:00.000Z
 feature_image: https://images.unsplash.com/photo-1673245886349-6b0cae152c50?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDR8fGJhbGxzfGVufDB8fHx8MTczMDUxODI1Mnww&ixlib=rb-4.0.3&q=80&w=2000
-published_date: '2024-11-02T12:00:50.000Z'
+published_date: 2024-11-02T12:00:50.000Z
 slug: permuations-and-combinations
 status: published
 title: 순열 조합 생성하기
-modified_date: '2024-11-02T12:00:49.000Z'
+modified_date: 2025-10-23T15:14:15.000Z
+custom_excerpt: 순열, 조합 등 itertools 패키지의 도구들을 간단하게 직접 구현해보기
+updated: 2025-10-23T15:11:05.000Z
 ---
 
 파이썬의 `itertools` 모듈은 효율적인 반복작업을 위한 도구들을 제공합니다. 여러 연속열을 합쳐주는 `chain(*xs)`, 같은 연속열을 계속 반복할 수 있는 `cycle(*xs)` 등의 여러 유용한 함수들과 더불어 특정한 집합의 요소들로 만들 수 있는 모든 순열과 조합을 생성하는 `permutations()`, `combinations()`도 있습니다. 파이썬의 표준 라이브러리가 제공하는 이러한 도구들은 매우 효율적으로 구현되어 빠르게 작동합니다. 
@@ -101,4 +103,20 @@ def permutations_with_replacement[T](xs: list[T], k: int=0) -> Generator[list[T]
 
 ## 중복을 포함하는 집합의 순열
 
-`[A, A, A, B, B]`와 같이 중복된 원소가 일정한 개수만큼만 포함되어 있는 경우의 순열은 어떻게 구할까요?
+`[A, A, A, B, B]`와 같이 중복된 원소가 일정한 개수만큼만 포함되어 있는 경우의 순열은 어떻게 구할까요? 중복을 방지하지만, 다른 요소와의 차이를 생각해야하기 때문에 상당히 복잡하고 까다롭게 여겨집니다. 그러나 앞서 구현했던 코드들이 모두 "남아있는 것 중 하나의 원소를 정하고, 나머지 목록에서 이후 분기들을 만든다"는 개념으로 접근하면 간단합니다. A 3개, B 2개에서 A를 하나 선택했다면 남은 목록은 A 2개, B 2개가 됩니다. 이렇게 각 원소와 개수의 정보를 만들어야 하니, `collections.Counter`를 사용하면 간단하게 해결할 수 있습니다. 
+
+```python
+def permutations_with_duplicates[T](
+    xs: Sequence[T],
+) -> Generator[tuple[T, ...], None, None]:
+    def helper(
+        acc: tuple[T, ...], remains: dict[T, int], k: int = 0
+    ) -> Generator[tuple[T, ...], None, None]:
+        if k == 0:
+            yield acc
+            return
+        for key, cnt in remains.items():
+            yield from helper((*acc, key), {**remains, key: cnt - 1}, k - 1)
+
+    yield from helper((), Counter(xs), len(xs))
+```

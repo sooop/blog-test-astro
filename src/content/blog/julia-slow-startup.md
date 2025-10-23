@@ -1,11 +1,11 @@
 ---
-created_at: '2024-06-11T01:31:50.000Z'
+created_at: 2024-06-11T01:31:50.000Z
 feature_image: https://images.unsplash.com/photo-1647166545674-ce28ce93bdca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDh8fGdpdHxlbnwwfHx8fDE3MzUyMDQ4Mzh8MA&ixlib=rb-4.0.3&q=80&w=2000
-published_date: '2024-12-26T09:21:36.000Z'
+published_date: 2024-12-26T09:21:36.000Z
 slug: julia-slow-startup
 status: published
 title: Julia REPL의 시작 시간이 느린 문제
-modified_date: '2024-12-26T09:21:36.000Z'
+modified_date: 2025-10-23T15:14:21.000Z
 ---
 
 사용하던 컴퓨터를 포맷할 일이 있어 포맷 후 Julia를 설치하려고 홈페이지를 찾아보니, 매 버전마다 패키지 인스톨러가 제공되던 방식외에 juliaup을 사용하라는 권고가 보였습니다. 아예 맨 위에 소개되는 내용이 MS Store에서 줄리아를 설치하는 명령이었습니다. 물론 아래 쪽에는 수동으로 설치할 수 있는 패키지를 다운로드 받을 수 있는 링크들이 소개되고는 있습니다. 

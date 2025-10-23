@@ -1,11 +1,13 @@
 ---
-created_at: '2024-10-22T15:11:26.000Z'
+created_at: 2024-10-22T15:11:26.000Z
 feature_image: https://images.unsplash.com/photo-1636969350238-a678edbbbb67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDMzfHxmdXR1cmlzdGljfGVufDB8fHx8MTcyOTYxMTY5NXww&ixlib=rb-4.0.3&q=80&w=2000
-published_date: '2024-10-22T15:41:57.000Z'
+published_date: 2024-10-22T15:41:57.000Z
 slug: i-have-migrated-from-wordpress-to-ghost
 status: published
 title: 워드프레스에서 고스트로 이전
-modified_date: '2024-10-26T09:37:35.000Z'
+modified_date: 2025-10-23T15:14:23.000Z
+custom_excerpt: 20년 가까이 썼던 워드프레스를 포기하고 Ghost로 이전한 사연
+updated: 2025-10-23T15:11:05.000Z
 ---
 
 이 글을 쓰면서도 믿기 힘든 사실인데, 블로그라는 걸 처음 시작한지가 20년이 되었습니다. 이글루스에서 처음 시작했다가, SK컴즈가 인수한다고 발표함과 동시에 워드프레스로 플랫폼을 옮겼죠. 워드프레스오 옮긴 이후에는 호스팅 환경을 이리 저리 옮기긴 했지만 거의 18년 가까이 워드프레스를 사용해온 것 같습니다. 

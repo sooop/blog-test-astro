@@ -1,11 +1,13 @@
 ---
-created_at: '2025-03-27T00:11:29.000Z'
+created_at: 2025-03-27T00:11:29.000Z
 feature_image: https://images.unsplash.com/photo-1742240483286-5fc6884638a1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8YWxsfDV8fHx8fHx8fDE3NDM2OTkzOTl8&ixlib=rb-4.0.3&q=80&w=2000
-published_date: '2025-04-05T22:00:55.000Z'
+published_date: 2025-04-05T22:00:55.000Z
 slug: montihol-munjereul-ihaehaneun-dareun-bangbeob
 status: published
 title: 몬티홀 문제를 이해하는 다른 방법
-modified_date: '2025-04-05T22:00:55.000Z'
+modified_date: 2025-10-23T15:14:20.000Z
+custom_excerpt: 수식으로는 계산할 수 있지만 받아들이기 힘든 이유
+updated: 2025-10-23T15:11:05.000Z
 ---
 
 몬티홀 문제는 조건부 확률의 대표적인 예이며, 조건부 확률을 사용하여 선택지를 바꾸는 것이 유리하다는 것을 증명할 수 있습니다. 그러나 많은 조건부 문제들이 그렇듯이 이 문제는 직관에 반하는 것처럼 보입니다. 계산으로 답을 구한다 한들, 도대체 왜 진행자가 문을 열어주는 것이, 처음에 선택되지 않았던 문의 당첨 확률을 높이는 결과를 만드는 것일까요? 그에 대한 여러 가지 설명들이 존재하지만, 되려 복잡하고 어렵게만 느껴질 뿐입니다. 대신 문제의 본질을 이해하는 것이 어렵다하더라도 그것을 체감하기에는 좋은 설명이 있어 소개합니다. 

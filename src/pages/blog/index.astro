@@ -30,7 +30,7 @@ const sortedPosts = blogPosts.sort((a, b) => {
             <div class="flex-1">
               <div class="flex items-center gap-3 mb-3">
                 <time
-                  datetime={post.data.published_date}
+                  datetime="{post.data.published_date}"
                   class="text-sm text-muted-foreground"
                 >
                   {new Date(post.data.published_date).toLocaleDateString('ko-KR', {
@@ -48,6 +48,9 @@ const sortedPosts = blogPosts.sort((a, b) => {
                   {post.data.title}
                 </a>
               </h2>
+			  <span class="text-gray-400 text-sm">
+				  {post.data.custom_excerpt}
+			  </span>
             </div>
           </div>
         </article>

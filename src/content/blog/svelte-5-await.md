@@ -1,10 +1,12 @@
 ---
-created_at: '2025-10-20T09:54:12.000Z'
-published_date: '2025-06-13T21:00:20.000Z'
+created_at: 2025-10-20T09:54:12.000Z
+published_date: 2025-09-30T21:00:20
 slug: svelte-5-await
 status: published
 title: Svelte 5 - await directive
-modified_date: '2025-06-13T21:00:20.000Z'
+modified_date: 2025-10-23T15:14:06.000Z
+custom_excerpt: Svelte 5.36부터 비동기 동작이 룬 등에 추가되었습니다.
+updated: 2025-10-23T15:11:05.000Z
 ---
 
 Svelte 5.36부터 컴포넌트 내부에서 `await` 키워드를 사용할 수 있습니다. 이 키워드가 허용되는 위치는 아래와 같습니다.
