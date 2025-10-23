@@ -219,9 +219,19 @@
 .katex-display {
   text-align: center;
   margin: 2rem 0;
-  font-size: 1.3em;
+  font-size: clamp(0.9em, 2.5vw, 1.3em);
   line-height: 2.2;
   @apply mx-auto justify-center w-full block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5rem 0;
+}
+
+/* Ensure KaTeX content doesn't overflow on mobile */
+.katex-display > .katex {
+  display: inline-block;
+  max-width: 100%;
 }
 
 /* Matrix row spacing */
@@ -231,4 +241,17 @@
 
 .katex-display .mtable {
   row-gap: 1em;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 640px) {
+  .katex-display {
+    font-size: 0.9em;
+    margin: 1.5rem -1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .prose .katex {
+    font-size: 0.95em;
+  }
 }
