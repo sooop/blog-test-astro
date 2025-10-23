@@ -41,7 +41,16 @@ const excerptSizeClass = excerptLength > 150 ? 'text-lg' :
                          'text-xl';
 ---
 
-<BaseLayout title={entry.data.title} currentPath={`/blog/${entry.data.slug}`}>
+<BaseLayout
+  title={entry.data.title}
+  currentPath={`/blog/${entry.data.slug}`}
+  description={entry.data.custom_excerpt || entry.data.description || entry.data.title}
+  keywords={entry.data.tags || []}
+  image={entry.data.feature_image}
+  publishedTime={entry.data.published_date.toISOString()}
+  modifiedTime={entry.data.modified_date?.toISOString()}
+  type="article"
+>
   <article class="max-w-4xl mx-auto px-6 py-12 md:py-16">
     <header class="mb-16">
       {entry.data.series && (

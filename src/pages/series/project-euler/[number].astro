@@ -50,7 +50,16 @@ const excerptSizeClass = excerptLength > 150 ? 'text-lg' :
                          'text-xl';
 ---
 
-<BaseLayout title={post.data.title} currentPath={Astro.url.pathname}>
+<BaseLayout
+  title={post.data.title}
+  currentPath={Astro.url.pathname}
+  description={post.data.custom_excerpt || post.data.title}
+  keywords={post.data.tags || ['project-euler', '알고리즘', '수학']}
+  image={post.data.feature_image}
+  publishedTime={post.data.published_date.toISOString()}
+  modifiedTime={post.data.modified_date?.toISOString()}
+  type="article"
+>
   <article class="max-w-4xl mx-auto px-6 py-12 md:py-16">
     <header class="mb-16">
       <div class="mb-4 text-center">

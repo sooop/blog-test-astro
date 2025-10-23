@@ -5,7 +5,7 @@ import rehypeKatex from 'rehype-katex';
 
 import tailwindcss from '@tailwindcss/vite';
 
-//import sitemap from '@astrojs/sitemap';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
@@ -29,4 +29,6 @@ export default defineConfig({
   },
 
   site: 'https://soooprmx.com',
+
+  integrations: [sitemap()],
 });

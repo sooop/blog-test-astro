@@ -9,7 +9,7 @@ const projectEuler = defineCollection({
     modified_date: z.coerce.date(),
     slug: z.string().optional(),
     custom_excerpt: z.string().optional(),
-    feature_image: z.string().optional(),
+    feature_image: z.string().nullable().optional(),
     category: z.string().optional(),
     tags: z.array(z.string()).optional(),
   })
@@ -28,6 +28,7 @@ const blog = defineCollection({
     status: z.string().optional(),
     tags: z.array(z.string()).optional(),
     series: z.string().optional(),
+    feature_image: z.string().nullable().optional(),
   }),
 });
 
