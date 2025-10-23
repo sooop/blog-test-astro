@@ -137,13 +137,20 @@
 }
 
 .prose code {
-  @apply font-mono text-foreground;
+  @apply font-mono;
   font-size: 0.875em;
   font-weight: 500;
-  padding: 0.15em 0.4em;
-  border-radius: 3px;
+  padding: 0.2em 0.45em;
+  border-radius: 4px;
   background-color: hsl(0 0% 95%);
+  color: oklch(50% 0.18 64deg);
   border: 1px solid hsl(0 0% 88%);
+}
+
+.dark .prose code {
+  background-color: hsl(0 0% 18%);
+  color: oklch(75% 0.16 64deg);
+  border-color: hsl(0 0% 28%);
 }
 
 .prose pre {
