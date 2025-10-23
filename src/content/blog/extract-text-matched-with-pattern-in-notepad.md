@@ -1,11 +1,13 @@
 ---
-created_at: '2024-07-20T06:15:00.000Z'
+created_at: 2024-07-20T06:15:00.000Z
 feature_image: https://images.unsplash.com/photo-1678558631095-1b0690cc2ee3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDE0fHxzd2lzcyUyMGFybXklMjBrbmlmZXxlbnwwfHx8fDE3Mjk2OTM0MDZ8MA&ixlib=rb-4.0.3&q=80&w=2000
-published_date: '2024-07-20T06:15:00.000Z'
+published_date: 2024-07-20T06:15:00.000Z
 slug: extract-text-matched-with-pattern-in-notepad
 status: published
 title: Notepad++에서 특정 패턴의 문구만 추출하여 정리하기
-modified_date: '2024-10-26T09:48:25.000Z'
+modified_date: 2024-10-26T09:48:25.000Z
+created: 2025-10-23T13:56:31.000Z
+updated: 2025-10-23T13:56:31.000Z
 ---
 
 최근에 텍스트로 된 csv, json 파일로 된 데이터를 가지고 이리 저리 엑셀과 씨름할 일이 많다보니 의외로 notepad++의 덕을 많이 보고 있습니다. 데이터를 포맷팅하거나 찾기/바꾸기 외에도 제품번호나 주문번호 같은 특정한 규격의 정보를 큰 텍스트 파일에서 추출하기도 하고, 엑셀에서 복사한 칼럼을 (붙여 넣으면 여러 라인의 텍스트가 되는데) 컴마로 연결하는 등의 일을 하게 됩니다. 오늘은 평소에는 잘 쓰지 않다가 이런 일을 하면서 유용함을 발견하게 된 몇 가지 기능들을 소개하고자 합니다. 

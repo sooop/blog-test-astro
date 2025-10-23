@@ -1,11 +1,13 @@
 ---
-created_at: '2015-10-10T06:00:13.000Z'
+created_at: 2015-10-10T06:00:13.000Z
 feature_image: https://images.unsplash.com/photo-1711075781376-bc5107736730?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDh8fGZpYm9uYWNjaXxlbnwwfHx8fDE3MzAwMTE4NTl8MA&ixlib=rb-4.0.3&q=80&w=2000
-published_date: '2024-10-27T12:00:21.000Z'
+published_date: 2024-10-27T12:00:21.000Z
 slug: fast-fibonacci-transform
 status: published
 title: 빠른 피보나치 변환
-modified_date: '2024-10-27T12:00:20.000Z'
+modified_date: 2024-10-27T12:00:20.000Z
+created: 2025-10-23T13:56:31.000Z
+updated: 2025-10-23T13:56:31.000Z
 ---
 
 아주 큰 N에 대한 피보나치 일반항 찾기

@@ -1,11 +1,13 @@
 ---
-created_at: '2020-04-04T06:22:00.000Z'
+created_at: 2020-04-04T06:22:00.000Z
 feature_image: __GHOST_URL__/content/images/2025/03/photo-1593987011155-542d44e8660e.jpeg
-published_date: '2025-02-01T06:22:00.000Z'
+published_date: 2025-02-01T06:22:00.000Z
 slug: vim-ins-complete
 status: published
 title: vim의 삽입모드 단어완성
-modified_date: '2025-03-04T09:54:46.000Z'
+modified_date: 2025-03-04T09:54:46.000Z
+created: 2025-10-23T13:56:31.000Z
+updated: 2025-10-23T13:56:31.000Z
 ---
 
 vim에서도 다양한 언어에 대한 맥락에 따른 자동 완성 기능을 제공하는 플러그인들이 있습니다. 특히 LSP 프로토콜을 사용하여 언어 서버만 설치하면 현재 코드의 맥락에 따라 적절한 자동완성 기능을 이용할 수도 있죠.

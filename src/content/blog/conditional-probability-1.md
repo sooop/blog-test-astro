@@ -1,10 +1,12 @@
 ---
-created_at: '2025-03-26T10:56:38.000Z'
-published_date: '2025-04-03T16:34:57.000Z'
+created_at: 2025-03-26T10:56:38.000Z
+published_date: 2025-04-03T16:34:57.000Z
 slug: conditional-probability-1
 status: published
 title: 조건부 확률 1
-modified_date: '2025-04-03T16:50:49.000Z'
+modified_date: 2025-04-03T16:50:49.000Z
+created: 2025-10-23T13:56:31.000Z
+updated: 2025-10-23T13:56:31.000Z
 ---
 
 교통 사고 사망자의 40%가 안전벨트 미착용자라는 기사가 있습니다. 이 기사를 보면 "어? 그럼 사망자의 60%가 안전벨트 착용자니까, 안전벨트를 메는 게 더 위험한 거 아니야?"라고 생각할 수도 있을 것 같습니다.

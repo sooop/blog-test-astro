@@ -1,11 +1,13 @@
 ---
-created_at: '2024-08-03T06:31:00.000Z'
+created_at: 2024-08-03T06:31:00.000Z
 feature_image: https://images.unsplash.com/photo-1649127473471-6c6b78919415?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDJ8fGV4dHJhY3R8ZW58MHx8fHwxNzI5NjA3MTk1fDA&ixlib=rb-4.0.3&q=80&w=2000
-published_date: '2024-08-03T06:31:00.000Z'
+published_date: 2024-08-03T06:31:00.000Z
 slug: extract-text-matched-with-pattern-in-vim
 status: published
 title: vim에서 패턴에 매칭되는 영역을 추출하기
-modified_date: '2024-10-26T09:41:53.000Z'
+modified_date: 2024-10-26T09:41:53.000Z
+created: 2025-10-23T13:56:31.000Z
+updated: 2025-10-23T13:56:31.000Z
 ---
 
 아래 글에서는 notepad++에서 Mark 기능을 사용해서 특정 패턴에 매치되는 부분만을 추출하는 방법을 소개했습니다. 

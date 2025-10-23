@@ -1,11 +1,13 @@
 ---
-created_at: '2020-04-30T02:54:00.000Z'
+created_at: 2020-04-30T02:54:00.000Z
 feature_image: https://images.unsplash.com/photo-1727886684068-957132ac7e08?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8YWxsfDN8fHx8fHx8fDE3MzAxNzI4MzN8&ixlib=rb-4.0.3&q=80&w=2000
-published_date: '2024-10-29T12:00:36.000Z'
+published_date: 2024-10-29T12:00:36.000Z
 slug: how-to-write-a-vim-plugin
 status: published
 title: vim 플러그인 만들기
-modified_date: '2024-10-29T12:00:37.000Z'
+modified_date: 2024-10-29T12:00:37.000Z
+created: 2025-10-23T13:56:31.000Z
+updated: 2025-10-23T13:56:31.000Z
 ---
 
 vim에서 '어떤 기능을 추가'하는 것은 크게 세 가지 정도로 구현됩니다. 먼저 일련의 반복적인 동작을 하나의 키 맵으로 정의하는 것이 있습니다. 두 번째로 사용자 정의명령을 만들어서 vim의 명령줄 명령이나 스크립트를 손쉽게 실행하는 방법이 있습니다. 세 번째로는 사용자 정의 함수를 작성하여, 보다 복잡한 기능을 구현하는 방법이 있습니다. 

@@ -1,11 +1,13 @@
 ---
-created_at: '2024-07-13T06:29:00.000Z'
+created_at: 2024-07-13T06:29:00.000Z
 feature_image: https://images.unsplash.com/photo-1568452907501-085a31020575?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDQyfHxrb3JlYSUyMHByZXNpZGVudHxlbnwwfHx8fDE3Mjk5NjAxODN8MA&ixlib=rb-4.0.3&q=80&w=2000
-published_date: '2024-10-27T09:00:39.000Z'
+published_date: 2024-10-27T09:00:39.000Z
 slug: how-to-calculate-age-in-excel
 status: published
 title: 엑셀에서 만나이 구하는 방법
-modified_date: '2024-10-27T09:00:40.000Z'
+modified_date: 2024-10-27T09:00:40.000Z
+created: 2025-10-23T13:56:31.000Z
+updated: 2025-10-23T13:56:31.000Z
 ---
 
 엑셀에서 특정 셀에 생년월일(Date형식)이 있다면 이를 바탕으로 오늘의 만 나이(a.k.a. 윤석열나이)를 계산해봅시다. 한국 사람들의 일반적인 나이 계산 방식을 적용하면 만나이 계산은 무척이나 귀찮습니다. 

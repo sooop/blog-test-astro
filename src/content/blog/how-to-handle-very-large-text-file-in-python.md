@@ -1,11 +1,13 @@
 ---
-created_at: '2017-04-15T10:42:39.000Z'
+created_at: 2017-04-15T10:42:39.000Z
 feature_image: https://images.unsplash.com/photo-1645967732161-db5c711e9e61?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMTc3M3wwfDF8c2VhcmNofDh8fG1hc3NpdmV8ZW58MHx8fHwxNzMzNDcxMDQ0fDA&ixlib=rb-4.0.3&q=80&w=2000
-published_date: '2024-12-13T21:00:11.000Z'
+published_date: 2024-12-13T21:00:11.000Z
 slug: how-to-handle-very-large-text-file-in-python
 status: published
 title: 대용량 파일을 끊어서 읽는 방법
-modified_date: '2024-12-13T21:00:10.000Z'
+modified_date: 2024-12-13T21:00:10.000Z
+created: 2025-10-23T13:56:31.000Z
+updated: 2025-10-23T13:56:31.000Z
 ---
 
 주로 텍스트 형식으로 된 파일을 읽어서 사용할 때에는 파일의 내용을 읽어들인 다음, 구분자를 기준으로 나누어서 처리합니다. 많은 경우 이 구분자는 개행문자인 경우가 많고, 문자열 객체의 `splitlines()`를 사용할 수 있고, 혹은 파일 객체를 반복자처럼 취급하여 `for line in f:` 와 같이 반복구문을 사용하는 방법이 있습니다. 
