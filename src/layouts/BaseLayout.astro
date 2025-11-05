@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import CalloutToggle from "../components/CalloutToggle.astro";
 import "../styles/app.css";
 
 interface Props {
@@ -109,5 +110,6 @@ const ogImage = new URL(image, Astro.site || 'https://wireframe.kr').href;
       </main>
       <Footer />
     </div>
+    <CalloutToggle />
   </body>
 </html>

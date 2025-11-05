@@ -1,0 +1,50 @@
+---
+// Astro Island Component for Callout Toggle Functionality
+// This component handles the interactive toggle behavior for collapsible callouts
+---
+
+<script>
+  // Initialize callout toggle functionality
+  function initCalloutToggles() {
+    const toggleButtons = document.querySelectorAll('.callout-toggle');
+
+    toggleButtons.forEach((button) => {
+      // Remove existing listeners to prevent duplicates
+      const newButton = button.cloneNode(true);
+      button.parentNode?.replaceChild(newButton, button);
+
+      newButton.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const header = (e.target as HTMLElement).closest('.callout-header');
+        if (!header) return;
+
+        const expanded = header.getAttribute('aria-expanded') === 'true';
+        const newExpanded = !expanded;
+
+        // Update aria-expanded attribute
+        header.setAttribute('aria-expanded', newExpanded.toString());
+
+        // Toggle content visibility
+        const content = header.nextElementSibling as HTMLElement;
+        if (content && content.classList.contains('callout-content')) {
+          if (newExpanded) {
+            content.classList.remove('collapsed');
+          } else {
+            content.classList.add('collapsed');
+          }
+        }
+      });
+    });
+  }
+
+  // Initialize on page load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCalloutToggles);
+  } else {
+    initCalloutToggles();
+  }
+
+  // Re-initialize after view transitions (if using Astro view transitions)
+  document.addEventListener('astro:page-load', initCalloutToggles);
+</script>
