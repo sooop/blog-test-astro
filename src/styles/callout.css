@@ -1,0 +1,267 @@
+/* Obsidian Callout Styles - Dieter Rams inspired minimal design */
+
+:root {
+  /* Callout type colors - subtle and functional */
+  --callout-note: hsl(210 60% 50%);
+  --callout-abstract: hsl(200 50% 50%);
+  --callout-info: hsl(195 55% 50%);
+  --callout-tip: hsl(145 50% 45%);
+  --callout-success: hsl(140 55% 45%);
+  --callout-question: hsl(280 50% 55%);
+  --callout-warning: hsl(35 80% 50%);
+  --callout-failure: hsl(0 55% 55%);
+  --callout-danger: hsl(0 65% 50%);
+  --callout-bug: hsl(0 60% 50%);
+  --callout-example: hsl(270 50% 55%);
+  --callout-quote: hsl(0 0% 50%);
+}
+
+.dark {
+  /* Darker variants for dark mode */
+  --callout-note: hsl(210 50% 60%);
+  --callout-abstract: hsl(200 45% 60%);
+  --callout-info: hsl(195 50% 60%);
+  --callout-tip: hsl(145 45% 55%);
+  --callout-success: hsl(140 50% 55%);
+  --callout-question: hsl(280 45% 65%);
+  --callout-warning: hsl(35 70% 60%);
+  --callout-failure: hsl(0 50% 65%);
+  --callout-danger: hsl(0 60% 60%);
+  --callout-bug: hsl(0 55% 60%);
+  --callout-example: hsl(270 45% 65%);
+  --callout-quote: hsl(0 0% 60%);
+}
+
+/* Callout container */
+.callout {
+  @apply my-8 rounded-lg border overflow-hidden;
+  background-color: var(--card);
+  border-color: var(--border);
+  font-family: var(--font-serif);
+}
+
+/* Callout header */
+.callout-header {
+  @apply flex items-center gap-3 px-5 py-4;
+  background-color: hsl(from var(--background) h s calc(l - 1%));
+  border-bottom: 1px solid var(--border);
+  cursor: default;
+}
+
+.dark .callout-header {
+  background-color: hsl(from var(--background) h s calc(l + 2%));
+}
+
+.callout-header[data-collapsible="true"] {
+  @apply cursor-pointer select-none;
+  transition: background-color 0.15s ease;
+}
+
+.callout-header[data-collapsible="true"]:hover {
+  background-color: hsl(from var(--background) h s calc(l - 2%));
+}
+
+.dark .callout-header[data-collapsible="true"]:hover {
+  background-color: hsl(from var(--background) h s calc(l + 3%));
+}
+
+/* Callout icon */
+.callout-icon {
+  @apply flex-shrink-0 flex items-center justify-center;
+  width: 20px;
+  height: 20px;
+}
+
+.callout-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Type-specific colors */
+.callout-note .callout-icon { color: var(--callout-note); }
+.callout-abstract .callout-icon { color: var(--callout-abstract); }
+.callout-info .callout-icon { color: var(--callout-info); }
+.callout-tip .callout-icon { color: var(--callout-tip); }
+.callout-success .callout-icon { color: var(--callout-success); }
+.callout-question .callout-icon { color: var(--callout-question); }
+.callout-warning .callout-icon { color: var(--callout-warning); }
+.callout-failure .callout-icon { color: var(--callout-failure); }
+.callout-danger .callout-icon { color: var(--callout-danger); }
+.callout-bug .callout-icon { color: var(--callout-bug); }
+.callout-example .callout-icon { color: var(--callout-example); }
+.callout-quote .callout-icon { color: var(--callout-quote); }
+
+/* Callout title */
+.callout-title {
+  @apply flex-1 font-semibold text-base;
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+/* Toggle button */
+.callout-toggle {
+  @apply flex-shrink-0 flex items-center justify-center;
+  @apply ml-auto p-1 rounded;
+  width: 24px;
+  height: 24px;
+  color: var(--muted-foreground);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.callout-toggle:hover {
+  color: var(--foreground);
+  background-color: hsl(from var(--background) h s calc(l - 4%));
+}
+
+.dark .callout-toggle:hover {
+  background-color: hsl(from var(--background) h s calc(l + 4%));
+}
+
+.callout-toggle svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+}
+
+/* Rotate toggle icon when expanded */
+.callout-header[aria-expanded="true"] .callout-toggle svg {
+  transform: rotate(0deg);
+}
+
+.callout-header[aria-expanded="false"] .callout-toggle svg {
+  transform: rotate(-90deg);
+}
+
+/* Callout content */
+.callout-content {
+  @apply px-5 py-4;
+  transition: all 0.25s ease;
+  overflow: hidden;
+}
+
+.callout-content.collapsed {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  opacity: 0;
+}
+
+/* Content styling - inherit from .prose */
+.callout-content > :first-child {
+  margin-top: 0;
+}
+
+.callout-content > :last-child {
+  margin-bottom: 0;
+}
+
+.callout-content p {
+  @apply mb-4 last:mb-0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--foreground);
+}
+
+.callout-content ul,
+.callout-content ol {
+  @apply mb-4 last:mb-0 space-y-2;
+}
+
+.callout-content li {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--foreground);
+}
+
+.callout-content code {
+  @apply font-mono;
+  font-size: 0.875em;
+  font-weight: 500;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  background-color: hsl(0 0% 95%);
+  color: oklch(50% 0.18 64deg);
+  border: 1px solid hsl(0 0% 88%);
+}
+
+.dark .callout-content code {
+  background-color: hsl(0 0% 18%);
+  color: oklch(75% 0.16 64deg);
+  border-color: hsl(0 0% 28%);
+}
+
+.callout-content pre {
+  @apply p-4 rounded my-4 overflow-x-auto border;
+  background-color: hsl(0 0% 97%);
+  border-color: var(--border);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.dark .callout-content pre {
+  background-color: hsl(0 0% 12%);
+}
+
+.callout-content pre code {
+  @apply bg-transparent p-0;
+  border: none;
+  background: none;
+}
+
+.callout-content blockquote {
+  @apply border-l-4 pl-4 italic my-4;
+  border-color: var(--border);
+  color: var(--muted-foreground);
+}
+
+/* Type-specific accent borders (subtle) */
+.callout-note {
+  border-left: 3px solid var(--callout-note);
+}
+
+.callout-abstract {
+  border-left: 3px solid var(--callout-abstract);
+}
+
+.callout-info {
+  border-left: 3px solid var(--callout-info);
+}
+
+.callout-tip {
+  border-left: 3px solid var(--callout-tip);
+}
+
+.callout-success {
+  border-left: 3px solid var(--callout-success);
+}
+
+.callout-question {
+  border-left: 3px solid var(--callout-question);
+}
+
+.callout-warning {
+  border-left: 3px solid var(--callout-warning);
+}
+
+.callout-failure {
+  border-left: 3px solid var(--callout-failure);
+}
+
+.callout-danger {
+  border-left: 3px solid var(--callout-danger);
+}
+
+.callout-bug {
+  border-left: 3px solid var(--callout-bug);
+}
+
+.callout-example {
+  border-left: 3px solid var(--callout-example);
+}
+
+.callout-quote {
+  border-left: 3px solid var(--callout-quote);
+}
