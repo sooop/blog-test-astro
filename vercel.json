@@ -1,6 +1,17 @@
 {
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "blog.soooprmx.com"
+        }
+      ],
+      "destination": "https://www.soooprmx.com/blog/",
+      "statusCode": 301
+    },
+    {
       "source": "/:path*",
       "has": [
         {
