@@ -5,7 +5,7 @@ published_date: 2024-10-27T09:00:39.000Z
 slug: how-to-calculate-age-in-excel
 status: published
 title: 엑셀에서 만나이 구하는 방법
-modified_date: 2025-11-06T09:47:05.000Z
+modified_date: 2025-11-06T10:35:40.000Z
 created: 2025-10-23T13:56:31.000Z
 updated: 2025-10-23T13:56:31.000Z
 ---

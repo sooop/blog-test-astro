@@ -5,7 +5,7 @@ published_date: 2024-11-02T12:00:50.000Z
 slug: permuations-and-combinations
 status: published
 title: 순열 조합 생성하기
-modified_date: 2025-10-23T15:14:15.000Z
+modified_date: 2025-11-06T10:35:53.000Z
 custom_excerpt: 순열, 조합 등 itertools 패키지의 도구들을 간단하게 직접 구현해보기
 updated: 2025-10-23T15:11:05.000Z
 ---

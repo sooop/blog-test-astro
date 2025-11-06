@@ -5,7 +5,7 @@ published_date: 2025-01-04T14:30:24.000Z
 slug: python-metaclass
 status: published
 title: 메타클래스에 관해
-modified_date: 2025-10-23T15:14:15.000Z
+modified_date: 2025-11-06T10:35:54.000Z
 custom_excerpt: 알아두어도 별 쓸모는 없는 메타클래스 만드는 법
 updated: 2025-10-23T15:11:05.000Z
 ---
