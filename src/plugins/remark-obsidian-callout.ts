@@ -68,7 +68,7 @@ const remarkObsidianCallout: Plugin<[], Root> = () => {
       const headerMatch = firstText.match(/^\[!([^\]]+)\]([+-]?)\s*(.*)/);
       if (!headerMatch) return;
 
-      const [, rawType, toggle, restOfLine] = headerMatch;
+      const [fullMatch, rawType, toggle, restOfLine] = headerMatch;
       const type = normalizeType(rawType);
       const collapsible = toggle === '+' || toggle === '-';
       const defaultExpanded = toggle !== '-';
@@ -77,28 +77,59 @@ const remarkObsidianCallout: Plugin<[], Root> = () => {
       // If empty, use capitalized type name
       const title = restOfLine.trim() || rawType.charAt(0).toUpperCase() + rawType.slice(1);
 
-      // Remove the first paragraph (it contains the header)
-      node.children.shift();
+      // Handle content after the header
+      // Check if there's more content in the first text node after the header
+      const remainingText = firstText.substring(fullMatch.length).trim();
+
+      if (remainingText || paragraph.children.length > 1) {
+        // There's content after the header in the same paragraph
+        // Remove only the header part from the first text node
+        (firstNode as Text).value = firstText.substring(fullMatch.length).trimStart();
+
+        // If the remaining value is empty, remove this text node
+        if ((firstNode as Text).value === '' && paragraph.children.length > 1) {
+          paragraph.children.shift();
+        }
+
+        // Keep the paragraph if it still has content
+        if (paragraph.children.length === 0 ||
+            (paragraph.children.length === 1 &&
+             paragraph.children[0].type === 'text' &&
+             (paragraph.children[0] as Text).value.trim() === '')) {
+          node.children.shift();
+        }
+      } else {
+        // No content after header, remove the entire first paragraph
+        node.children.shift();
+      }
 
       // Create callout structure
       const icon = getIconSVG(type);
+      const hasContent = node.children.length > 0;
 
-      const calloutNode: any = {
-        type: 'html',
-        value: `<div class="callout callout-${type}" data-type="${type}">
+      // Build header HTML
+      let headerHTML = `<div class="callout callout-${type}" data-type="${type}">
   <div class="callout-header"${collapsible ? ` data-collapsible="true" aria-expanded="${defaultExpanded}"` : ''}>
     <span class="callout-icon">${icon}</span>
     <span class="callout-title">${escapeHtml(title)}</span>${collapsible ? `
     <button class="callout-toggle" aria-label="Toggle callout">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
     </button>` : ''}
-  </div>
-  <div class="callout-content${collapsible && !defaultExpanded ? ' collapsed' : ''}">`,
+  </div>`;
+
+      // Only add content wrapper if there's actual content
+      if (hasContent) {
+        headerHTML += `\n  <div class="callout-content${collapsible && !defaultExpanded ? ' collapsed' : ''}">`;
+      }
+
+      const calloutNode: any = {
+        type: 'html',
+        value: headerHTML,
       };
 
       const closeDiv: any = {
         type: 'html',
-        value: '  </div>\n</div>',
+        value: hasContent ? '  </div>\n</div>' : '</div>',
       };
 
       // Replace blockquote with callout structure
