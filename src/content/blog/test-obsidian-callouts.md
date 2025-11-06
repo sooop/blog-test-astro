@@ -2,10 +2,14 @@
 title: Obsidian Callout 테스트
 slug: test-obsidian-callouts
 published_date: 2025-11-05
-modified_date: 2025-11-05
+modified_date: 2025-11-06T09:47:05.000Z
 status: published
-tags: [test, obsidian, callout]
+tags:
+  - test
+  - obsidian
+  - callout
 description: Obsidian callout plugin test page
+created_at: 2025-11-06T09:47:05.000Z
 ---
 
 이 페이지는 옵시디언 콜아웃 플러그인의 모든 기능을 테스트하기 위한 페이지입니다.
