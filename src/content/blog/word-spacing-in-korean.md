@@ -5,7 +5,7 @@ published_date: 2024-10-09T20:40:50.000Z
 slug: word-spacing-in-korean
 status: published
 title: 띄어쓰기에 대한 생각
-modified_date: 2025-10-23T15:14:08.000Z
+modified_date: 2026-03-21T14:28:01.809Z
 custom_excerpt: 한국어 띄어쓰기 규정은 '너 따위가 단어가 뭔지 알고 어미와 접미사를 구분할 수 있을까?'의 문제입니다.
 updated: 2025-10-23T15:11:05.000Z
 ---

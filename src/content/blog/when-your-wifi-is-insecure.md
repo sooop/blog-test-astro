@@ -5,7 +5,7 @@ published_date: 2024-11-05T21:00:17.000Z
 slug: when-your-wifi-is-insecure
 status: published
 title: 집 와이파이가 보안이 취약하다할 때
-modified_date: 2025-10-23T15:13:54.000Z
+modified_date: 2026-03-21T14:28:01.519Z
 custom_excerpt: 보안 수준이 낮은 와이파이는 위험할 뿐만 아니라 느리기까지합니다.
 updated: 2025-10-23T15:11:05.000Z
 ---

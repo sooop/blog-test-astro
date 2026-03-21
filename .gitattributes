@@ -1,0 +1,19 @@
+# 기본: 텍스트 파일의 개행 문자를 자동 감지
+* text=auto
+
+# 마크다운 및 소스 파일은 LF로 고정 (Obsidian이 LF로 저장하므로)
+*.md  text eol=lf
+*.ts  text eol=lf
+*.mjs text eol=lf
+*.js  text eol=lf
+*.css text eol=lf
+*.json text eol=lf
+*.toml text eol=lf
+
+# 바이너리 파일은 변환하지 않음
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary

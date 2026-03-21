@@ -4,7 +4,7 @@ published_date: 2004-11-27T02:12:00.000Z
 slug: carot
 status: published
 title: 캐럿
-modified_date: 2025-10-23T15:14:33.000Z
+modified_date: 2026-03-21T14:27:58.429Z
 ---
 
 > 캐럿(carot) : 보석의 질량 단위.

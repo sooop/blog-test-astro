@@ -5,7 +5,7 @@ published_date: 2025-01-04T14:30:24.000Z
 slug: python-metaclass
 status: published
 title: 메타클래스에 관해
-modified_date: 2025-11-06T10:35:54.000Z
+modified_date: 2026-03-21T14:28:00.331Z
 custom_excerpt: 알아두어도 별 쓸모는 없는 메타클래스 만드는 법
 updated: 2025-10-23T15:11:05.000Z
 ---
@@ -20,7 +20,7 @@ updated: 2025-10-23T15:11:05.000Z
 일반적으로 클래스는 객체를 만드는 '붕어빵 틀'이나 '설계도'에 비유됩니다. 하지만 파이썬을 비롯한 많은 객체지향 언어에서 클래스는 단순한 템플릿이 아니라 그 자체가 실체를 가진 객체입니다.
 
 ```python
-class MyClass:
+class MyClass:git st
     pass
 
 # 클래스도 객체이므로 다음이 모두 가능합니다

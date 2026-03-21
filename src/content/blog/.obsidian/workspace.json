@@ -1,0 +1,203 @@
+{
+  "main": {
+    "id": "989ecbdad9e47494",
+    "type": "split",
+    "children": [
+      {
+        "id": "212cf73c1906c9e8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "db0beaf999e3d8a9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "python-metaclass.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "python-metaclass"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "2e3d4a1cdec2e831",
+    "type": "split",
+    "children": [
+      {
+        "id": "f7fea16207aa19d7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6184fb2f87e4a367",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "파일 탐색기"
+            }
+          },
+          {
+            "id": "947f497e89088535",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "검색"
+            }
+          },
+          {
+            "id": "1ef6470ba4fc2ebf",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "북마크"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "cb07a80c8415c049",
+    "type": "split",
+    "children": [
+      {
+        "id": "85b3ce2e2c08b7ed",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "32dc7bada369756f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "python-metaclass.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "python-metaclass 의 백링크"
+            }
+          },
+          {
+            "id": "7c0f20ed5437111b",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "python-metaclass.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "python-metaclass 의 나가는 링크"
+            }
+          },
+          {
+            "id": "1e3a5186351f3682",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "태그"
+            }
+          },
+          {
+            "id": "469db3631117611b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "python-metaclass.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "python-metaclass 의 개요"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:빠른 전환기 열기": false,
+      "graph:그래프 뷰 열기": false,
+      "canvas:새 캔버스 만들기": false,
+      "daily-notes:오늘의 일일 노트 열기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false,
+      "bases:새 베이스 생성하기": false
+    }
+  },
+  "active": "db0beaf999e3d8a9",
+  "lastOpenFiles": [
+    "scan-text-by-a-character-from-file.md",
+    "윈도11 테마색상 자동 변경하기.md",
+    "change-window-11-colot-theme-automatically.md",
+    "vim-jeonggyusig-suryang-hanjeongja.md",
+    "how-to-use-pathlib-in-python.md",
+    "윈도11 테마색상 자동 변경하기.md.tmp.4796.1774078969864",
+    "윈도11 테마색상 자동 변경하기.md.tmp.4796.1774078966570",
+    "텍스트 파일에서 글자 단위로 파일 읽기.md",
+    "Pasted image 20260321163451.png",
+    "Pasted image 20260321162730.png",
+    "python-metaclass.md",
+    "how-to-calculate-age-in-excel.md",
+    "fast-fibonacci-transform.md",
+    "extract-text-matched-with-pattern-in-vim.md",
+    "extract-text-matched-with-pattern-in-notepad.md",
+    "cursor-in-edge.md",
+    "conditional-probability-2.md",
+    "conditional-probability-1.md",
+    "carot.md",
+    "tips-for-using-functions-in-julia.md",
+    "vim 정규식 수량 한정자.md",
+    "vim-ins-complete.md",
+    "when-your-wifi-is-insecure.md",
+    "phoneme-segmentation-of-hangul.md",
+    "smi-to-srt.md",
+    "svelte-5-await.md",
+    "permuations-and-combinations.md",
+    "Pasted image 20251106105830.png"
+  ]
+}

@@ -6,13 +6,14 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "process": "node scripts/process-posts.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/sitemap": "^3.6.0",
     "@tailwindcss/vite": "^4.1.13",
-    "astro": "^5.14.1",
+    "astro": "^6.0.8",
     "hast-util-to-html": "^9.0.5",
     "katex": "^0.16.22",
     "mdast-util-to-hast": "^13.2.0",

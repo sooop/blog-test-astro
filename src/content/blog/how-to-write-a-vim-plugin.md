@@ -5,7 +5,7 @@ published_date: 2024-10-29T12:00:36.000Z
 slug: how-to-write-a-vim-plugin
 status: published
 title: vim 플러그인 만들기
-modified_date: 2025-10-23T15:13:13.000Z
+modified_date: 2026-03-21T14:27:59.532Z
 custom_excerpt: 간단한 vim 플러그인을 직접 만들어보고 싶을 때 참고하면 좋을 자료
 ---
 

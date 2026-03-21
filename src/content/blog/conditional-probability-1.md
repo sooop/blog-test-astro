@@ -4,7 +4,7 @@ published_date: 2025-04-03T16:34:57.000Z
 slug: conditional-probability-1
 status: published
 title: 조건부 확률 1
-modified_date: 2025-10-23T15:14:28.000Z
+modified_date: 2026-03-21T14:27:58.630Z
 created: 2025-10-23T13:56:31.000Z
 updated: 2025-10-23T15:11:05.000Z
 ---

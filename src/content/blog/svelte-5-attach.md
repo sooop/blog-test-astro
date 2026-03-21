@@ -4,7 +4,7 @@ published_date: 2025-06-13T21:00:20.000Z
 slug: svelte-5-attach
 status: published
 title: Svelte 5 Attachment
-modified_date: 2025-10-23T15:14:07.000Z
+modified_date: 2026-03-21T14:28:01.025Z
 custom_excerpt: 이전에 `use:`로 사용되던 기능이 반응성 블럭으로 업그레이드 되었습니다.
 updated: 2025-10-23T15:11:05.000Z
 ---

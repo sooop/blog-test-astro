@@ -5,7 +5,7 @@ published_date: 2024-10-22T15:41:57.000Z
 slug: i-have-migrated-from-wordpress-to-ghost
 status: published
 title: 워드프레스에서 고스트로 이전
-modified_date: 2025-10-23T15:14:23.000Z
+modified_date: 2026-03-21T14:27:59.631Z
 custom_excerpt: 20년 가까이 썼던 워드프레스를 포기하고 Ghost로 이전한 사연
 updated: 2025-10-23T15:11:05.000Z
 ---
