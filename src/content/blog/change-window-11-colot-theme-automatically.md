@@ -160,7 +160,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 4. 무슨 일을 하냐면 "프로그램 실행"을 선택한다.
 5. 실행할 프로그램과 인수, 시작 디렉토리는 다음과 같이 쓴다.
 	1.  프로그램 : powershell.exe
-	2. 인수 : `-NoProfile -ExecutionPolicy Bypass -File "%LOCALAPPDATA%\Scripts\theme-switcher.ps1"
+	2. 인수 : `-NoProfile -ExecutionPolicy Bypass -File "%LOCALAPPDATA%\Scripts\theme-switcher.ps1"`
 	3. 시작디렉토리 : `%LOCALAPPDATA%\Scripts`
 6. '마침을 선택할 때 작업의 속성 대화상자 열기'에 체크하고 마침을 누르면 등록이 완료된다.
 
