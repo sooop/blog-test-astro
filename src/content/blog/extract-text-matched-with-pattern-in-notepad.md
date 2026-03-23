@@ -5,7 +5,7 @@ published_date: 2024-07-20T06:15:00.000Z
 slug: extract-text-matched-with-pattern-in-notepad
 status: published
 title: Notepad++에서 특정 패턴의 문구만 추출하여 정리하기
-modified_date: 2026-03-21T14:27:58.933Z
+modified_date: 2026-03-23T15:10:55.802Z
 created: 2025-10-23T13:56:31.000Z
 updated: 2025-10-23T15:11:05.000Z
 ---

@@ -5,7 +5,7 @@ published_date: 2024-10-30T19:00:34.000Z
 slug: reinstall-edge-in-terminal
 status: published
 title: 윈도 초기화 후 Edge가 없어질 때
-modified_date: 2026-03-21T14:28:00.634Z
+modified_date: 2026-03-23T15:10:58.124Z
 custom_excerpt: Edge는 나름 쓸만한 브라우저라는 걸 깨닫자마자 무슨 일이 있어나게 되는데...
 updated: 2025-10-23T15:11:05.000Z
 ---

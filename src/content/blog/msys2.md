@@ -5,7 +5,7 @@ published_date: 2024-11-01T12:00:21.000Z
 slug: msys2
 status: published
 title: MSYS2
-modified_date: 2026-03-21T14:27:59.928Z
+modified_date: 2026-03-23T15:10:57.174Z
 ---
 
 윈도 환경에서 C로 작성된 소스코드를 컴파일하려면 Visual Studio를 쓰거나 다른 컴파일러를 구성하는 두 가지 선택지가 있습니다. 개인적으로는 Visual Studio는 선호하지 않습니다. 뭐가 너무 많이 설치되는데다가 설치 위치도 내가 결정할 수 없어서 C드라이브 용량이 빠듯한 상황이면 선뜻 설치할 수 조차 없습니다. 그리고 굳이 무거운 IDE를 같이 쓰고 싶지도 않고요. 

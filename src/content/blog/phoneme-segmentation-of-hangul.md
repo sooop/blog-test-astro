@@ -5,7 +5,7 @@ published_date: 2024-10-29T14:39:52.000Z
 slug: phoneme-segmentation-of-hangul
 status: published
 title: 한글을 초성, 중성, 종성으로 분리하기
-modified_date: 2026-03-21T14:28:00.230Z
+modified_date: 2026-03-23T15:10:57.580Z
 custom_excerpt: 한글 문자의 음소 분리방법
 updated: 2025-10-23T15:11:05.000Z
 ---

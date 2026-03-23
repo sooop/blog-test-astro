@@ -5,7 +5,7 @@ published_date: 2024-08-03T06:31:00.000Z
 slug: extract-text-matched-with-pattern-in-vim
 status: published
 title: vim에서 패턴에 매칭되는 영역을 추출하기
-modified_date: 2026-03-21T14:27:59.036Z
+modified_date: 2026-03-23T15:10:55.958Z
 created: 2025-10-23T13:56:31.000Z
 updated: 2025-10-23T15:11:05.000Z
 ---

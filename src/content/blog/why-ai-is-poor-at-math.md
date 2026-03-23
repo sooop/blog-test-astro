@@ -4,7 +4,7 @@ published_date: 2025-11-06T16:55:00.000Z
 slug: why-ai-is-poor-at-math.md
 status: published
 title: 왜 AI는 수학에 서툰가?
-modified_date: 2026-03-21T14:28:01.616Z
+modified_date: 2026-03-23T15:10:59.524Z
 ---
 
 AI가 계산을 틀리게 해서 난감한 일을 겪었다는 이야기를 SNS에서 종종 볼 수 있습니다. 현세대 IT 기술의 선두에 서 있는 LLM은 왜 계산을 못하는 것일까요?

@@ -4,7 +4,7 @@ published_date: 2026-03-21T14:27:58.533Z
 slug: change-window-11-colot-theme-automatically
 status: published
 title: 윈도11 테마색상 자동 변경하기
-modified_date: 2026-03-21T14:27:58.533Z
+modified_date: 2026-03-23T15:10:55.186Z
 custom_excerpt: 윈도 다크모드를 시간대에 따라 자동 전환되도록 하는 방법
 updated: 2026-03-21T07:11:05.000Z
 ---
@@ -21,30 +21,105 @@ C:\Users\사용자이름\AppData\Local\Scripts\theme-change.ps1
 
 아니면 탐색기의 주소 표시줄에 `%LOCALAPPDATA%` 라고 입력하고 엔터키를 눌러도 바로 이동할 수 있다. 
 
-아래 파일을 위 폴더에 바로 만들거나, 다른 곳에 만들어서 해당 위치로 옮겨둔다. 
+아래 파일을 위 폴더에 바로 만들거나, 다른 곳에 만들어서 해당 위치로 옮겨둔다. (이 코드는 Claude를 통해서 제작함)
 
 ```powershell
+# Windows API P/Invoke 선언
+Add-Type @"
+using System;
+using System.Runtime.InteropServices;
+
+public class WindowsTheme {
+    [DllImport("user32.dll", SetLastError = true, CharSet = CharSet.Auto)]
+    public static extern IntPtr SendMessageTimeout(
+        IntPtr hWnd,
+        uint Msg,
+        IntPtr wParam,
+        string lParam,
+        uint fuFlags,
+        uint uTimeout,
+        out IntPtr lpdwResult
+    );
+
+    public const uint WM_SETTINGCHANGE = 0x001A;
+    public const uint SMTO_ABORTIFHUNG = 0x0002;
+    public static readonly IntPtr HWND_BROADCAST = (IntPtr)0xffff;
+}
+"@
+
+function Broadcast-ThemeChange {
+    <#
+    .SYNOPSIS
+    모든 앱과 시스템 UI에 테마 변경을 알립니다.
+    #>
+    try {
+        $result = [IntPtr]::Zero
+        [WindowsTheme]::SendMessageTimeout(
+            [WindowsTheme]::HWND_BROADCAST,
+            [WindowsTheme]::WM_SETTINGCHANGE,
+            [IntPtr]::Zero,
+            "ImmersiveColorSet",
+            [WindowsTheme]::SMTO_ABORTIFHUNG,
+            1000,
+            [ref]$result
+        ) | Out-Null
+        
+        Write-Host "Theme change broadcasted to all windows"
+    }
+    catch {
+        Write-Host "Warning: Could not broadcast theme change: $_" -ForegroundColor Yellow
+    }
+}
+
 # 다크 테마로 전환
 function Set-DarkTheme {
     $RegistryPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize"
-    Set-ItemProperty -Path $RegistryPath -Name "AppsUseLightTheme" -Value 0 -Type DWord
-    Set-ItemProperty -Path $RegistryPath -Name "SystemUsesLightTheme" -Value 0 -Type DWord
-    Write-Host "System themes changed to dark."
+    
+    try {
+        Set-ItemProperty -Path $RegistryPath -Name "AppsUseLightTheme" -Value 0 -Type DWord -ErrorAction Stop
+        Set-ItemProperty -Path $RegistryPath -Name "SystemUsesLightTheme" -Value 0 -Type DWord -ErrorAction Stop
+        
+        # 작업 표시줄 테마도 함께 변경 (Windows 10/11)
+        $AccentPath = "HKCU:\Software\Microsoft\Windows\DWM"
+        if (Test-Path $AccentPath) {
+            Set-ItemProperty -Path $AccentPath -Name "ColorPrevalence" -Value 1 -Type DWord -ErrorAction SilentlyContinue
+        }
+        
+        Write-Host "System theme switched to dark mode" -ForegroundColor Green
+        Broadcast-ThemeChange
+    }
+    catch {
+        Write-Host "Error setting dark theme: $_" -ForegroundColor Red
+    }
 }
 
 # 라이트 테마로 전환
 function Set-LightTheme {
     $RegistryPath = "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize"
-    Set-ItemProperty -Path $RegistryPath -Name "AppsUseLightTheme" -Value 1 -Type DWord
-    Set-ItemProperty -Path $RegistryPath -Name "SystemUsesLightTheme" -Value 1 -Type DWord
-    Write-Host "System themes changed to light."
+    
+    try {
+        Set-ItemProperty -Path $RegistryPath -Name "AppsUseLightTheme" -Value 1 -Type DWord -ErrorAction Stop
+        Set-ItemProperty -Path $RegistryPath -Name "SystemUsesLightTheme" -Value 1 -Type DWord -ErrorAction Stop
+        
+        # 작업 표시줄 테마도 함께 변경 (Windows 10/11)
+        $AccentPath = "HKCU:\Software\Microsoft\Windows\DWM"
+        if (Test-Path $AccentPath) {
+            Set-ItemProperty -Path $AccentPath -Name "ColorPrevalence" -Value 1 -Type DWord -ErrorAction SilentlyContinue
+        }
+        
+        Write-Host "System theme switched to light mode" -ForegroundColor Green
+        Broadcast-ThemeChange
+    }
+    catch {
+        Write-Host "Error setting light theme: $_" -ForegroundColor Red
+    }
 }
 
 # 현재 시간에 따라 테마 자동 선택
 $CurrentHour = (Get-Date).Hour
 
-# 6시~18시는 라이트 테마, 그 외에는 다크 테마
-if ($CurrentHour -ge 9 -and $CurrentHour -lt 19) {
+# 10시~19시는 라이트 테마, 그 외에는 다크 테마
+if ($CurrentHour -ge 09 -and $CurrentHour -lt 19) {
     Set-LightTheme
 } else {
     Set-DarkTheme
@@ -103,4 +178,3 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 * 모든 사용자
 
 이렇게하면 PC에 사용자 로그온할 때마다 실행되어 현재 시간에 맞는 색상 테마가 되도록 할 수 있다.
-

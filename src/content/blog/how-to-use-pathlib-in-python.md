@@ -5,7 +5,7 @@ published_date: 2026-03-21T14:27:59.433Z
 slug: how-to-use-pathlib-in-python
 status: published
 title: 파이썬 pathlib 사용법
-modified_date: 2026-03-21T14:27:59.433Z
+modified_date: 2026-03-23T15:10:56.501Z
 ---
 
 파이썬에서는 `os.path` 라는 파일 시스템 내의 경로를 다루는 모듈이 있습니다. 이 모듈을 주로 사용하던 예전에는 파일 시스템 내의 경로는 문자열로만 표현되었습니다. 그래서 경로관련 조작을 위해서는 `os.path`가 사용하는 함수를 사용해야 했습니다. 그러다보니, 특정한 경로를 생성하는 것도 상당히 불편한 점이 많았습니다. 

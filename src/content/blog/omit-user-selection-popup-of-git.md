@@ -5,7 +5,7 @@ published_date: 2024-10-03T11:37:00.000Z
 slug: omit-user-selection-popup-of-git
 status: published
 title: git 사용자 선택 팝업 생략하기
-modified_date: 2026-03-21T14:28:00.029Z
+modified_date: 2026-03-23T15:10:57.311Z
 custom_excerpt: fetch, pull, push 시에 github 사용자 선택 화면이 표시되는 문제 해결
 updated: 2025-10-23T15:11:05.000Z
 ---

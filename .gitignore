@@ -27,3 +27,5 @@ pnpm-debug.log*
 .playwright-mcp/
 
 src/content/.obsidian/
+bash.exe.stackdump
+nul

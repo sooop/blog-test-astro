@@ -4,7 +4,7 @@ published_date: 2025-12-24T00:00:00.000Z
 slug: solution-to-disappering-mouse-pointer-in-edge
 status: published
 title: 브라우저에서 커서가 사라지는 문제
-modified_date: 2026-03-21T14:27:58.828Z
+modified_date: 2026-03-23T15:10:55.610Z
 ---
 
 엣지, 크롬등 블링크 엔진 기반 브라우저에서 텍스트 위에 마우스 포인터(커서)를 갖다대었을 때, 'I' 모양의 커서나 나타나지 않고 사라지는 증상이 있음. 케이스에 따라 경우는 약간씩 달라지는데 마우스 포인터의 색상이 흰색으로 바뀌면서 잘 보이지 않는 경우부터 아예 사라지는 경우까지. 

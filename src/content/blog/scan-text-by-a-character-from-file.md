@@ -5,7 +5,7 @@ published_date: 2024-12-14T21:00:04.000Z
 slug: scan-text-by-a-character-from-file
 status: published
 title: 파일에서 한 글자씩 스캔하는 방법
-modified_date: 2026-03-21T14:28:00.829Z
+modified_date: 2026-03-23T15:10:58.397Z
 custom_excerpt: 파이썬에서 줄 단위로 구분할 수 없는 텍스트 데이터를 글자단위로 스트리밍하는 방법
 updated: 2025-10-23T15:11:05.000Z
 ---

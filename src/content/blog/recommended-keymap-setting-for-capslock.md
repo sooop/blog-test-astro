@@ -5,7 +5,7 @@ published_date: 2024-10-27T10:00:19.000Z
 slug: recommended-keymap-setting-for-capslock
 status: published
 title: 키보드 추천 세팅
-modified_date: 2026-03-21T14:28:00.433Z
+modified_date: 2026-03-23T15:10:57.851Z
 custom_excerpt: capslock키를 포기하고 자유를 얻는 방법
 updated: 2025-10-23T15:11:05.000Z
 ---

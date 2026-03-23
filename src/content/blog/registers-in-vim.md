@@ -5,7 +5,7 @@ published_date: 2024-10-29T21:00:58.000Z
 slug: registers-in-vim
 status: published
 title: vim 레지스터 가이드
-modified_date: 2026-03-21T14:28:00.539Z
+modified_date: 2026-03-23T15:10:57.989Z
 custom_excerpt: vim은 클립보드가 나타나기 전부터 존재했는데, 그럼 복사는 어떻게?
 updated: 2025-10-23T15:11:05.000Z
 ---

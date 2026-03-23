@@ -5,7 +5,7 @@ published_date: 2024-12-09T15:00:00.000Z
 slug: review-cidoo-qk61-v2
 status: published
 title: CIDOO QK61 V2
-modified_date: 2026-03-21T14:28:00.731Z
+modified_date: 2026-03-23T15:10:58.262Z
 custom_excerpt: 60% 배열 최고 가성비, QMK/VIA 지원 61키 유무선 키보드
 updated: 2025-10-23T15:11:05.000Z
 ---
