@@ -1,4 +1,5 @@
-export function calculateReadingTime(content: string): number {
+export function calculateReadingTime(content: string | undefined): number {
+  if (!content) return 0;
   const wordsPerMinute = 200;
   const koreanCharsPerMinute = 500;
 

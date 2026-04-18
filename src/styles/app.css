@@ -86,7 +86,9 @@
   }
 }
 
-/* Article Content Styles */
+/* ============================================================
+   Article Content (Prose)
+   ============================================================ */
 .prose {
   @apply text-foreground;
   font-family: var(--font-serif);
@@ -94,26 +96,43 @@
 
 .prose p {
   @apply mb-8 text-foreground;
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.8;
   font-weight: 400;
 }
 
 .prose h2 {
-  @apply font-serif text-3xl font-semibold mt-12 mb-6 text-foreground;
+  @apply font-serif font-semibold text-foreground;
+  font-size: 1.75rem;
+  margin-top: 3.5rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
 }
 
 .prose h3 {
-  @apply font-serif text-2xl font-semibold mt-10 mb-5 text-foreground;
+  @apply font-serif font-semibold text-foreground;
+  font-size: 1.3rem;
+  margin-top: 2.5rem;
+  margin-bottom: 0.875rem;
+  line-height: 1.4;
 }
 
 .prose h4 {
-  @apply font-serif text-xl font-semibold mt-8 mb-4 text-foreground;
+  @apply font-serif font-semibold text-foreground;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  margin-bottom: 0.625rem;
+  line-height: 1.5;
 }
 
 .prose h5,
 .prose h6 {
-  @apply font-sans text-lg font-semibold mt-6 mb-3 text-foreground;
+  @apply font-sans font-semibold text-foreground;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
 }
 
 .prose ul,
@@ -131,7 +150,7 @@
 
 .prose li {
   @apply text-foreground;
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.8;
 }
 
@@ -139,43 +158,207 @@
   @apply text-muted-foreground;
 }
 
-.prose code {
-  @apply font-mono;
-  font-size: 0.875em;
+/* ============================================================
+   Inline Code
+   ============================================================ */
+.prose code:not(pre code) {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.82em;
   font-weight: 500;
-  padding: 0.2em 0.45em;
+  padding: 0.15em 0.45em 0.15em 0.4em;
+  background-color: hsl(0 0% 93%);
+  color: oklch(42% 0.18 64deg);
+  border: 1px solid hsl(0 0% 85%);
+  font-feature-settings: 'liga' 0, 'calt' 0;
+  letter-spacing: -0.01em;
+}
+
+.dark .prose code:not(pre code) {
+  background-color: hsl(0 0% 14%);
+  color: oklch(75% 0.14 64deg);
+  border-color: hsl(0 0% 24%);
+}
+
+/* ============================================================
+   kbd
+   ============================================================ */
+kbd.kbd {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: 0.75em;
+  font-weight: 500;
+  line-height: 1;
+  padding: 0.25em 0.55em;
   border-radius: 4px;
-  background-color: hsl(0 0% 95%);
-  color: oklch(50% 0.18 64deg);
-  border: 1px solid hsl(0 0% 88%);
-}
-
-.dark .prose code {
-  background-color: hsl(0 0% 18%);
-  color: oklch(75% 0.16 64deg);
-  border-color: hsl(0 0% 28%);
-}
-
-.prose pre {
-  @apply p-6 rounded-lg my-10 overflow-x-auto border border-border;
   background-color: hsl(0 0% 97%);
-  font-size: 0.9375rem;
+  border: 1px solid hsl(0 0% 80%);
+  border-bottom-width: 2px;
+  color: hsl(0 0% 30%);
+  box-shadow: 0 1px 0 hsl(0 0% 75%), inset 0 1px 0 hsl(0 0% 100%);
+  white-space: nowrap;
+}
+
+.dark kbd.kbd {
+  background-color: hsl(0 0% 16%);
+  border-color: hsl(0 0% 32%);
+  border-bottom-color: hsl(0 0% 24%);
+  color: hsl(0 0% 78%);
+  box-shadow: 0 1px 0 hsl(0 0% 10%), inset 0 1px 0 hsl(0 0% 22%);
+}
+
+.kbd-sep {
+  font-size: 0.75em;
+  color: var(--muted-foreground);
+  margin: 0 0.1em;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  user-select: none;
+}
+
+/* ============================================================
+   Code Block (Shiki dual-theme + toolbar)
+   ============================================================ */
+
+/* Dual-theme: light is default, dark overrides via .dark class */
+.prose .astro-code,
+.prose .astro-code span {
+  color: var(--shiki-light);
+  background-color: var(--shiki-light-bg);
+  font-style: var(--shiki-light-font-style);
+  font-weight: var(--shiki-light-font-weight);
+  text-decoration: var(--shiki-light-text-decoration);
+}
+
+.dark .prose .astro-code,
+.dark .prose .astro-code span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+
+/* Code block figure container */
+.prose figure.code-block {
+  @apply my-10;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: hsl(0 0% 99%);
+}
+
+.dark .prose figure.code-block {
+  background-color: hsl(0 0% 9%);
+  border-color: hsl(0 0% 18%);
+}
+
+/* Toolbar */
+.code-block__toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 14px;
+  border-bottom: 1px solid var(--border);
+  background-color: hsl(0 0% 96%);
+  min-height: 36px;
+}
+
+.dark .code-block__toolbar {
+  background-color: hsl(0 0% 12%);
+  border-color: hsl(0 0% 18%);
+}
+
+.code-block__lang {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.code-block__copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--muted-foreground);
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-family: var(--font-sans);
+  transition: color 0.12s ease, border-color 0.12s ease, background-color 0.12s ease;
+}
+
+.code-block__copy:hover {
+  color: var(--foreground);
+  border-color: var(--border);
+  background-color: var(--background);
+}
+
+.code-block__copy:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 1px;
+}
+
+/* Hidden raw code store */
+.code-block__raw {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* The actual pre from Shiki */
+.prose figure.code-block pre {
+  @apply px-5 py-5 overflow-x-auto;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  font-size: 0.875rem;
   line-height: 1.7;
 }
 
-.prose pre code {
-  @apply bg-transparent p-0;
-  font-size: 0.9375rem;
+.prose figure.code-block pre code {
+  background: transparent;
+  padding: 0;
   border: none;
-  background: none;
+  font-size: inherit;
 }
 
+/* Fallback: unwrapped pre (no rehype plugin for non-markdown contexts) */
+.prose pre:not(.astro-code) {
+  @apply p-6 my-10 overflow-x-auto border border-border;
+  border-radius: 6px;
+  background-color: hsl(0 0% 97%);
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.prose pre:not(.astro-code) code {
+  @apply bg-transparent p-0;
+  border: none;
+  font-size: 0.875rem;
+}
+
+/* ============================================================
+   Blockquote
+   ============================================================ */
 .prose blockquote {
-  @apply border-l-4 border-border pl-6 italic text-muted-foreground my-8;
-  font-size: 1.125rem;
+  @apply border-l-2 border-border pl-6 italic text-muted-foreground my-8;
+  font-size: 1rem;
   line-height: 1.8;
 }
 
+/* ============================================================
+   Links
+   ============================================================ */
 .prose a {
   @apply text-foreground underline decoration-accent/40 hover:decoration-accent transition-colors;
   text-underline-offset: 3px;
@@ -185,6 +368,9 @@
   color: var(--accent);
 }
 
+/* ============================================================
+   Text styles
+   ============================================================ */
 .prose strong {
   @apply font-semibold text-foreground;
 }
@@ -194,31 +380,86 @@
 }
 
 .prose hr {
-  @apply border-border my-16;
+  border: none;
+  margin: 4rem auto;
+  height: 1px;
+  width: 60%;
+  background: linear-gradient(to right, transparent, var(--border) 20%, var(--border) 80%, transparent);
 }
 
+/* ============================================================
+   Images
+   ============================================================ */
 .prose img {
   @apply rounded my-10;
 }
 
-.prose table {
-  @apply w-full my-8 border-collapse;
+.prose p:has(> img:only-child) {
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
+
+/* ============================================================
+   Tables
+   ============================================================ */
+.prose .table-wrapper {
+  margin: 2.5rem 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  margin: 0;
+  color: var(--foreground);
+}
+
+.prose thead tr {
+  background-color: color-mix(in srgb, var(--muted) 30%, var(--card));
+}
+
+.prose th,
+.prose td {
+  padding: 0.55rem 0.9rem;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.6;
+  border-right: 1px solid color-mix(in srgb, var(--border) 40%, transparent);
+  border-bottom: 1px solid var(--border);
+  font-variant-numeric: tabular-nums;
+}
+
+.prose tr > *:last-child { border-right: none; }
+.prose tbody tr:last-child > * { border-bottom: none; }
 
 .prose th {
-  @apply border-b-2 border-border px-4 py-3 text-left font-semibold text-foreground;
+  font-weight: 600;
+  font-size: 0.95rem;
 }
 
-.prose td {
-  @apply border-b border-border px-4 py-3 text-foreground;
+/* 숫자 열: GFM 우측 정렬 (| ---: |) → monospace + tabular */
+.prose th[style*="text-align:right"],
+.prose td[style*="text-align:right"] {
+  font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.88rem;
+  letter-spacing: -0.005em;
 }
 
-/* KaTeX inline math */
+/* ============================================================
+   KaTeX math
+   ============================================================ */
 .prose .katex {
   font-size: 1em;
 }
 
-/* KaTeX math display styles */
 .katex-display {
   text-align: center;
   margin: 2rem 0;
@@ -231,13 +472,11 @@
   padding: 0.5rem 0;
 }
 
-/* Ensure KaTeX content doesn't overflow on mobile */
 .katex-display > .katex {
   display: inline-block;
   max-width: 100%;
 }
 
-/* Matrix row spacing */
 .katex-display .mtable > .arrayrow {
   padding: 0.5em 0;
 }
@@ -246,7 +485,6 @@
   row-gap: 1em;
 }
 
-/* Mobile-specific adjustments */
 @media (max-width: 640px) {
   .katex-display {
     font-size: 0.9em;
@@ -257,13 +495,4 @@
   .prose .katex {
     font-size: 0.95em;
   }
-}
-
-/* Center images in paragraphs containing only an image */
-.prose p:has(> img:only-child) {
-  text-align: center;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
 }

@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import DraftSidebar from '../../components/svelte/DraftSidebar.svelte';
+
+if (import.meta.env.PROD) {
+  return Astro.redirect('/404');
+}
+
+const entries = await getCollection('draft');
+const sorted = entries.sort((a, b) =>
+  new Date(b.data.published_date).getTime() - new Date(a.data.published_date).getTime()
+);
+const drafts = sorted.map((e) => ({ title: e.data.title, slug: e.data.slug }));
+---
+
+<BaseLayout title="Draft" currentPath="/draft">
+  <div class="flex h-[calc(100vh-4rem)] overflow-hidden">
+    <!-- Sidebar -->
+    <div class="w-56 shrink-0 flex flex-col overflow-hidden">
+      <div class="px-3 pt-3 pb-2 border-b border-r border-border">
+        <p class="text-xs font-mono uppercase tracking-widest text-muted-foreground">Draft</p>
+      </div>
+      <DraftSidebar client:load {drafts} />
+    </div>
+
+    <!-- Main -->
+    <div class="flex-1 flex items-center justify-center text-center px-6">
+      <div>
+        <p class="text-2xl font-serif text-muted-foreground mb-2">초안 작업 공간</p>
+        <p class="text-sm text-muted-foreground">왼쪽 목록에서 초안을 선택하세요.</p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const entries = await getCollection('guide');
+const sorted = entries.sort((a, b) => {
+  const oa = a.data.order ?? 999;
+  const ob = b.data.order ?? 999;
+  return oa - ob;
+});
+---
+
+<BaseLayout title="Guide" currentPath="/guide" description="작성법 가이드 및 기능 쇼케이스">
+  <div class="max-w-4xl mx-auto px-6 py-16 md:py-24">
+    <header class="mb-16">
+      <h1 class="font-serif text-4xl md:text-5xl mb-4 text-foreground">Guide</h1>
+      <p class="text-lg text-muted-foreground">작성법 가이드 및 기능 쇼케이스</p>
+    </header>
+
+    <div class="space-y-0 divide-y divide-border">
+      {sorted.map((entry) => (
+        <article class="py-8 group">
+          <a href={`/guide/${entry.data.slug}`} class="block">
+            <h2 class="font-serif text-2xl mb-2 text-foreground group-hover:text-accent transition-colors">
+              {entry.data.title}
+            </h2>
+            {entry.data.custom_excerpt && (
+              <p class="text-muted-foreground text-sm leading-relaxed">
+                {entry.data.custom_excerpt}
+              </p>
+            )}
+          </a>
+        </article>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
