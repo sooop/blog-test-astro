@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import { unified } from '@astrojs/markdown-remark';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import remarkObsidianCallout from './src/plugins/remark-obsidian-callout.ts';
@@ -17,24 +18,26 @@ import mdx from '@astrojs/mdx';
 
 export default defineConfig({
   markdown: {
-    remarkPlugins: [
-      remarkMath,
-      remarkObsidianCallout,
-      remarkDirective,
-      remarkCalloutDirective,
-      remarkKbd,
-      remarkNoUnderscoreEmphasis,
-    ],
-    rehypePlugins: [
-      [rehypeKatex, {
-        output: 'html',
-        strict: false,
-        trust: false,
-        throwOnError: false,
-      }],
-      rehypeCodeBlockWrap,
-      rehypeTableWrap,
-    ],
+    processor: unified({
+      remarkPlugins: [
+        remarkMath,
+        remarkObsidianCallout,
+        remarkDirective,
+        remarkCalloutDirective,
+        remarkKbd,
+        remarkNoUnderscoreEmphasis,
+      ],
+      rehypePlugins: [
+        [rehypeKatex, {
+          output: 'html',
+          strict: false,
+          trust: false,
+          throwOnError: false,
+        }],
+        rehypeCodeBlockWrap,
+        rehypeTableWrap,
+      ],
+    }),
     shikiConfig: {
       themes: {
         light: 'one-light',
