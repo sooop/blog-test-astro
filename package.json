@@ -7,7 +7,10 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "process": "node scripts/process-posts.mjs"
+    "process": "node scripts/process-posts.mjs",
+    "editor:install": "npm --prefix tools/editor install",
+    "editor:build": "npm --prefix tools/editor run build",
+    "editor": "node tools/editor/server.js"
   },
   "overrides": {
     "yaml": "^2.8.3"
